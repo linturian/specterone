@@ -5,8 +5,9 @@ class WatchItem extends Component {
 
     render() {
         const { state } = this.props.watch;
-        let button = <Button onClick={this.props.reserveHandler.bind(this, this.props.watch)}>Reserve</Button>;
         let stateDOM = '';
+        let button = <Button onClick={this.props.reserveHandler}>Reserve</Button>;
+
         if (state == "reserved") {
             button = <Button onClick={this.props.cancelHandler}>Cancel</Button>;
             stateDOM = (<h3>RESERVED</h3>);
@@ -20,7 +21,7 @@ class WatchItem extends Component {
                     </div>
                     <div className="watch-image">
                         <img style={{ width: '100%' }}
-                            src="https://cdn.shopify.com/s/files/1/0377/2037/products/WhiteGoldLeather.Front_large.jpg" />
+                            src={this.props.watch.image} />
                     </div>
                     <div className="watch-details">
                         <h3>{this.props.watch.name}</h3>

@@ -53,28 +53,39 @@ class Collection extends Component {
         this.setState({ visible: true, selectedWatch: item });
     }
 
-    cancelHandler = (item, e) => {
+    cancelHandler = (key, e) => {
         e.preventDefault();
+        let items = this.state.watchCollection;
+        items[key].state = "available";
         this.setState({
             visible: false,
+            watchCollection: items
         });
-        item.state = "available";
-        console.log(this.state.watchCollection);
     }
 
-    reserveHandler = (item) => {
-        this.setState({ selectedWatch: item });
-        this.state.selectedWatch.state = 'reserved';
+    reserveHandler = (key, e) => {
+        e.preventDefault();
+        let items = this.state.watchCollection;
+        items[key].state = "reserved";
         this.setState({
             visible: false,
-            selectedWatch: {},
+            watchCollection: items
         });
-        console.log(this.state.watchCollection);
     }
 
     confirmHandler = (e) => {
         e.preventDefault();
         this.props.history.push('/collection/reserve');
+    }
+
+    closeModalHandler = () => {
+        this.setState({
+            visible: false,
+        });
+    }
+
+    backHandler = () => {
+        this.props.history.goBack();
     }
 
     render() {
@@ -86,31 +97,33 @@ class Collection extends Component {
                 <WatchItem
                     watch={watchCollection[key]}
                     onClick={this.clickHandler.bind(this, watchCollection[key])}
-                    reserveHandler={this.reserveHandler.bind(this, watchCollection[key])}
-                    cancelHandler={this.cancelHandler} />
+                    reserveHandler={this.reserveHandler.bind(this, key)}
+                    cancelHandler={this.cancelHandler.bind(this, key)} />
             </Col>)
         });
 
 
-        let button = <Button onClick={this.reserveHandler} style={{ margin: '24px 0 0 0' }} >Reserve</Button>
+        let button = <Button onClick={this.reserveHandler.bind(this, this.state.selectedWatch.key)} style={{ margin: '24px 0 0 0' }} >Reserve</Button>
         if (this.state.selectedWatch.state == "reserved") {
-            button = <Button onClick={this.cancelHandler} style={{ margin: '24px 0 0 0' }} >Cancel</Button>
+            button = <Button onClick={this.cancelHandler.bind(this, this.state.selectedWatch.key)} style={{ margin: '24px 0 0 0' }} >Cancel</Button>
         }
 
         return (
             <div>
                 <Row>
                     <Col xs={24} style={{ textAlign: 'center', margin: '24px 0px' }}>
+                        <span onClick={this.backHandler}>back arrow</span>
                         <h1>COLLECTION</h1>
                     </Col>
                 </Row>
                 <Row gutter={2}>
                     {collection}
                 </Row>
+
                 <Modal
                     title={null}
                     visible={this.state.visible}
-                    onCancel={this.cancelHandler}
+                    onCancel={this.closeModalHandler}
                     footer={null}
                 >
                     <Row>
@@ -127,10 +140,11 @@ class Collection extends Component {
                         </Col>
                     </Row>
                 </Modal>
-                <Affix offsetBottom={0} style={{ position: 'absolute', right: 0}}>
+
+                <Affix offsetBottom={0} style={{ position: 'absolute', right: 0 }}>
                     <Button size="large"
-                     style={{ backgroundColor: 'black', color: 'white'}}
-                     onClick={this.confirmHandler}>Confirm Subscription</Button>
+                        style={{ backgroundColor: 'black', color: 'white' }}
+                        onClick={this.confirmHandler}>Confirm Subscription</Button>
                 </Affix>
             </div >
         );
