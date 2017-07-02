@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^2.11.2",
+    "nodemailer": "^4.0.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-facebook-login": "^3.6.2",
@@ -12,11 +13,12 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.2.1",
+    "gotham-fonts": "^1.0.3",
     "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "lessc --clean-css src/antd-theme.less src/antd.min.css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

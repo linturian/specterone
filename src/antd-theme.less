@@ -1,0 +1,136 @@
+@import "../node_modules/antd/dist/antd.less";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+// see list of variables in
+// https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+
+@primary-color: white;
+// @primary-2: 'red';  // replace tint(@primary-color, 80%)
+// // unused
+// @primary-3: 'blue';
+// @primary-4: 'green';
+// // Color used to control the text color in many active and hover states.
+// @primary-5: 'orange';  // replace tint(@primary-color, 20%)
+// @primary-6: 'purple';                                // don't use, use @primary-color
+// // Color used to control the text color of active buttons.
+// @primary-7: 'pink';  // replace shade(@primary-color, 5%)
+// // unused
+// @primary-8: 'yellow';
+
+@body-background: #000;
+@component-background: #000;
+
+@text-color: fade(#fff, 90%);
+@font-size-base: 14px;
+@border-radius-base: 0px;
+@border-radius-radio: 4px;
+@border-radius-sm: 0px;
+@font-family: 'Open Sans', sans-serif;
+
+
+// Unify letter spacing
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    letter-spacing: 0.04em;
+}
+
+
+// Header
+@heading-color: #fff;
+@heading-font-family: 'Roboto', sans-serif;
+
+h1, h2, h3, h4, h5, h6 {
+  color: @heading-color;
+  font-family: @heading-font-family;
+  letter-spacing: 0.2em;
+}
+
+// Button
+@btn-default-bg         : transparent;
+
+@btn-primary-color      : #000;
+@btn-primary-bg         : @primary-color;
+
+@btn-default-color      : #fff;
+@btn-default-bg         : transparent;
+@btn-default-border     : #fff;
+
+.button-variant-primary(@color; @background) {
+  .button-color(@color; @background; @background);
+  &:hover {
+    .button-color(@background; @color; @background);
+  }
+  &:focus {
+    .button-color(@background; ~`colorPalette("@{color}", 5)`; ~`colorPalette("@{background}", 5)`);
+  }
+  &:active,
+  &.active {
+    .button-color(@background; ~`colorPalette("@{color}", 7)`; ~`colorPalette("@{background}", 7)`);
+  }
+  .button-disabled();
+}
+
+.btn-default() {
+  .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border);
+  &:hover {
+    .button-color(#000; @btn-default-color; @btn-default-border);
+  }
+  &:focus,
+  &:active,
+  &.active {
+    .button-color(#000; @btn-default-color; @btn-default-border);
+  }
+}
+
+
+
+// Radio Button
+.@{radio-prefix-cls} {
+  .@{radio-prefix-cls}-wrapper:hover &,
+  &:hover,
+  &-focused {
+    .@{radio-inner-prefix-cls} {
+      border-color: @border-color-base;
+    }
+  }
+  &-inner {
+    &:after {
+      background-color: @border-color-base;
+      border-radius: @border-radius-radio;
+    }
+  }
+}
+
+.@{radio-prefix-cls}-checked {
+  .@{radio-inner-prefix-cls} {
+    border-color: @border-color-base;
+  }
+}
+
+
+// Input
+@input-bg: fade(#fff, 10%);
+
+
+// Layout
+@layout-header-background    : #000;
+@layout-body-background   : #000;
+
+// Menu
+.@{menu-prefix-cls} {
+  &-horizontal {
+    border-bottom: 1px solid #000;
+    
+    > .@{menu-prefix-cls}-item,
+    > .@{menu-prefix-cls}-submenu {
+      border-bottom: 0px;
+
+      &:hover,
+      &-active,
+      &-open,
+      &-selected {
+        border-bottom: 0px;
+        color: @primary-color;
+      }
+    }
+  }
+}
