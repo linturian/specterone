@@ -115,6 +115,20 @@ h1, h2, h3, h4, h5, h6 {
 @layout-header-background    : #000;
 @layout-body-background   : #000;
 
+.@{layout-prefix-cls} {
+  &-header {
+    height: 100%;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .@{layout-prefix-cls} {
+    &-header {
+      padding: 0 1em;
+    }
+  }
+}
+
 // Menu
 .@{menu-prefix-cls} {
   &-horizontal {
@@ -133,4 +147,33 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
+}
+
+@media (max-width: @screen-xs-max) {
+  .@{menu-prefix-cls} {
+    display: flex;
+    justify-content: space-between;
+
+    &-item,
+    &-submenu-title {
+      margin: 0;
+      padding: 0 1em;
+    }
+  }
+}
+
+#layout-header .logo {
+  width: 120px;
+  height: 31px;
+  background: #333;
+  border-radius: 6px;
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+
+@media (max-width: @screen-xs-max) {
+#layout-header .logo {
+  margin: 16px auto;
+  float: none;
+}
 }
