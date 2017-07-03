@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "lessc --clean-css src/antd-theme.less src/antd.min.css && react-scripts build",
+    "build": "lessc --clean-css src/style.less src/style.min.css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

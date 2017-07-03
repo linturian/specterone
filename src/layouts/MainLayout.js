@@ -27,8 +27,7 @@ class MainLayout extends Component {
                             </Col>
                         </Row>
                     </Header>
-                    <Content style={{ padding: '0 2em' }}>
-                        CONTENT 123
+                    <Content>
                         {this.props.children}
                     </Content>
                     <Footer>
