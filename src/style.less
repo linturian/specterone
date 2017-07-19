@@ -25,7 +25,17 @@
 @border-radius-base: 0px;
 @border-radius-radio: 4px;
 @border-radius-sm: 0px;
+// @box-shadow-base: 0 0 5px 1px #ffffff;
 @font-family: 'Open Sans', sans-serif;
+
+// Shadow
+@shadow-color           : #fff;
+// @box-shadow-base        : @shadow-1-down;
+// @shadow-1-up            : 0 -1px 6px @shadow-color;
+@shadow-1-down          : 0 0 6px 0px @shadow-color;
+// @shadow-1-left          : -1px 0 6px @shadow-color;
+// @shadow-1-right         : 1px 0 6px @shadow-color;
+// @shadow-2               : 0 2px 8px @shadow-color;
 
 // Unify letter spacing
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
@@ -173,6 +183,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// Card
+.@{card-prefix-cls} {
+  &:not(&-no-hovering):hover {
+    border-color: inherit;
+  }
+}
+
+
+// Input
+@input-placeholder-color     : @disabled-color-dark;
+
 
 
 //************************//
@@ -212,6 +233,7 @@ div.membership-term:hover{
             transition: all 500ms;	
             cursor: pointer			
 }
+
 
 .tier-card {
     text-align: center

@@ -23,7 +23,8 @@ class Banner extends Component {
                     <h1>TITLE</h1>
                     <p>Paragraph of somethings</p>
                     <br/><br/>
-                    <Button>Discover More</Button>
+                    <Button style={{ marginRight: '1em' }}>Apply Now</Button>
+                    <Button>Watch Video</Button>
                     </Col>
                 </Row>
             </div>

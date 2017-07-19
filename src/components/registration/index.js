@@ -1,5 +1,5 @@
 import MembershipTerm from './MembershipTerm';
 import Register from './Register';
-import Tier6 from './Tier6';
+import Tier from './Tier';
 
-export { MembershipTerm, Register, Tier6 };
+export { MembershipTerm, Register, Tier };
