@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 class Banner extends Component {
     render() {
         return (
-            <div class="banner" style={{
+            <div className="banner" style={{
                 backgroundImage: "url('https://images.askmen.com/1080x540/style/watch_snob/watch-forums-1108680-TwoByOne.jpg')",
                 height: '80vh',
                 backgroundSize: 'cover'
@@ -13,7 +13,7 @@ class Banner extends Component {
                 <Row type="flex" style={{
                         margin: 'auto 0',
                         position: 'absolute',
-                        left: '8em',
+                        left: '8vw',
                         height: 'inherit',
                         alignItems: 'center',
                         fontSize: '20px'

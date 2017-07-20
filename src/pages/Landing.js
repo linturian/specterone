@@ -18,18 +18,20 @@ function Landing(props) {
                 </Col>
             </Row>
             <Tier />
-            <Row style={{margin: '1em 50px'}}>
+            <Row style={{ margin: '1em 50px' }}>
                 <Col xs={24} style={{ textAlign: 'center', marginTop: '3em' }}>
                     <h2>FAQ</h2>
                 </Col>
                 <Col xs={24}>
                     <table>
-                        <tr>
-                            <td><h3>1. Lorem ipsum dolor sit amet?</h3></td>
-                        </tr>
-                        <tr>
-                            <td><p>{text}</p></td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><h3>1. Lorem ipsum dolor sit amet?</h3></td>
+                            </tr>
+                            <tr>
+                                <td><p>{text}</p></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </Col>
             </Row>

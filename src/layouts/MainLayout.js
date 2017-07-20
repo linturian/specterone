@@ -17,17 +17,17 @@ class MainLayout extends Component {
                             <Col xs={24} md={6}>
                                 <div className="logo" />
                             </Col>
-                            <Col xs={24} md={7} >
+                            <Col xs={24} md={9} >
                                 <Menu mode="horizontal" style={{ lineHeight: '64px' }}>
-                                    <Menu.Item key="1">APPLY</Menu.Item>
-                                    <Menu.Item key="2">COLLECTIONS</Menu.Item>
-                                    <Menu.Item key="3">FAQ</Menu.Item>
-                                    <Menu.Item key="4">CONCIERGE</Menu.Item>
+                                    <Menu.Item key="1">COLLECTION</Menu.Item>
+                                    <Menu.Item key="2">FAQ</Menu.Item>
+                                    <Menu.Item key="3">CONCIERGE</Menu.Item>
+                                    <Menu.Item key="4">LOGIN</Menu.Item>
                                 </Menu>
                             </Col>
                         </Row>
                     </Header>
-                    <Content>
+                    <Content style={{backgroundColor: '#252525'}}>
                         {this.props.children}
                     </Content>
                     <Footer>

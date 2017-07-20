@@ -8,7 +8,8 @@ import Landing from '../pages/Landing';
 
 const Router = () => (
     <Switch>
-      <Route exact path='/' component={Landing}/>
+      <Route exact path='/' component={ComingSoon}/>
+      <Route exact path='/landing' component={Landing}/>      
       <Route exact path='/register' component={Register}/>
       <Route exact path='/register/membership-term' component={MembershipTerm}/>
       <Route path='/register/membership-term/:number' component={Tier}/>

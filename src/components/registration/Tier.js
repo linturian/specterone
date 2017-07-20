@@ -23,7 +23,7 @@ class Tier extends Component {
     render() {
 
         return (
-            <div style={{ padding: '3em' }}>
+            <div className="tiers" style={{ padding: '3em' }}>
                 <Row gutter={16}>
                     <Col sm={24} md={8} >
                         <TierCard name="FIRST TIER" price="123" features={['brand 1', 'brand 2']} clickHandler={this.clickHandler}/>

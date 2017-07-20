@@ -17,8 +17,8 @@ class TierCard extends Component {
                     <p>${this.props.price}</p>
                 </div>
                 <div className="custom-card">
-                    {this.props.features.map((feature) => {
-                        return (<p>{feature}</p>)
+                    {this.props.features.map((feature, i) => {
+                        return (<p key={i}>{feature}</p>)
                     })}
                 </div>
                 <div className="custom-footer">
