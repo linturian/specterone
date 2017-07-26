@@ -12,23 +12,13 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.2.1",
-    "husky": "^0.14.1",
-    "lint-staged": "^4.0.2",
-    "prettier": "^1.5.3",
     "react-mailchimp-subscribe": "^1.0.1",
     "react-scripts": "1.0.7"
   },
   "scripts": {
-    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "lessc --clean-css src/style.less src/style.min.css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "lint-staged": {
-    "src/*.{js,css}": [
-      "prettier --single-quote --write --trailing-comma es5 --jsx-bracket-same-line",
-      "git add"
-    ]
   }
 }
