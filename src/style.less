@@ -195,7 +195,20 @@ h1, h2, h3, h4, h5, h6 {
 
 // Logo
 .logo{
-  font-family: 'Krona One'
+  font-family: 'Krona One';
+  font-size: 3em;
+}
+
+@media (max-width: @screen-xs-max) {
+  .logo{
+    font-size: 2em;
+  }
+  h1{
+    font-size: 1.5em;
+  }
+  h2{
+    font-size: 1.25em;
+  }
 }
 
 //************************//

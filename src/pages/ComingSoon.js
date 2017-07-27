@@ -15,7 +15,7 @@ class ComingSoon extends Component {
             <div>
                 <Row type="flex" justify="center" align="middle" style={{ height: '100vh', textAlign: 'center', backgroundPosition: 'center', backgroundImage: 'url("img/comingsoon-bg.jpg")' }} >
                     <Col xs={20} >
-                        <h1 style={{ fontSize: '3em', marginBottom: '2em' }} className='logo'>SPECTER ONE</h1>
+                        <h1 style={{ marginBottom: '2em' }} className='logo'>SPECTER ONE</h1>
                         <h2 style={{ marginBottom: '1em' }}>COMING SOON...</h2>
                         <h1>THE ADVENTURE BEGINS</h1>
                         <br />
