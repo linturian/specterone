@@ -5,10 +5,12 @@ import Collection from '../components/collection/Collection';
 import Reserve from '../components/collection/Reserve';
 import ComingSoon from '../pages/ComingSoon';
 import Landing from '../pages/Landing';
+import BetaSignup from '../pages/BetaSignup';
 
 const Router = () => (
     <Switch>
       <Route exact path='/' component={ComingSoon}/>
+      <Route exact path='/signup' component={BetaSignup}/>
       <Route exact path='/landing' component={Landing}/>      
       <Route exact path='/register' component={Register}/>
       <Route exact path='/register/membership-term' component={MembershipTerm}/>
