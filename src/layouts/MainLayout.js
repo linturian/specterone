@@ -15,19 +15,20 @@ class MainLayout extends Component {
                     <Header id="layout-header" >
                         <Row type="flex" justify="space-between">
                             <Col xs={24} md={6}>
-                                <div className="logo" />
+                                <div className="logo" >SPECTER ONE</div>
                             </Col>
-                            <Col xs={24} md={9} >
+                            <Col xs={24} md={7} >
                                 <Menu mode="horizontal" style={{ lineHeight: '64px' }}>
-                                    <Menu.Item key="1">COLLECTION</Menu.Item>
-                                    <Menu.Item key="2">FAQ</Menu.Item>
-                                    <Menu.Item key="3">CONCIERGE</Menu.Item>
-                                    <Menu.Item key="4">LOGIN</Menu.Item>
+                                    <Menu.Item key="1">APPLY</Menu.Item>
+                                    <Menu.Item key="2">COLLECTION</Menu.Item>
+                                    <Menu.Item key="3">FAQ</Menu.Item>
+                                    <Menu.Item key="4">CONTACT</Menu.Item>
+                                    {/* <Menu.Item key="5">LOGIN</Menu.Item> */}
                                 </Menu>
                             </Col>
                         </Row>
                     </Header>
-                    <Content style={{backgroundColor: '#252525'}}>
+                    <Content>
                         {this.props.children}
                     </Content>
                     <Footer>

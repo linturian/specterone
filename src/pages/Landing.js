@@ -2,6 +2,8 @@ import React from 'react';
 import { MainLayout } from '../layouts';
 import Banner from '../components/Banner';
 import { Tier } from '../components/registration';
+import HowItWorks from '../components/HowItWorks';
+import CollectionList from '../components/CollectionList';
 import { Col, Row } from 'antd';
 
 
@@ -12,6 +14,8 @@ function Landing(props) {
     return (
         <MainLayout>
             <Banner />
+            <HowItWorks />
+            <CollectionList />
             <Row>
                 <Col xs={24} style={{ textAlign: 'center', marginTop: '3em' }}>
                     <h2>SELECT A PLAN THAT IS SUITABLE FOR YOU.</h2>

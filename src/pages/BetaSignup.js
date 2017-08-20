@@ -25,7 +25,7 @@ class BetaSignup extends Component {
                                 <input type="text" name="b_3b5936bf6be301a299947c2f3_abf3b3e242" tabIndex="-1" value="" />
                             </div>
                             <div className="clear">
-                                <Button type="primary" htmlType="submit" name="subscribe" id="mc-embedded-subscribe">SIGN UP NOW</Button>
+                                <Button htmlType="submit" name="subscribe" id="mc-embedded-subscribe">SIGN UP NOW</Button>
                             </div>
                         </form>
 

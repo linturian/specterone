@@ -6,9 +6,10 @@ class Banner extends Component {
     render() {
         return (
             <div className="banner" style={{
-                backgroundImage: "url('https://images.askmen.com/1080x540/style/watch_snob/watch-forums-1108680-TwoByOne.jpg')",
+                backgroundImage: 'url("img/comingsoon-bg.jpg")',
                 height: '80vh',
-                backgroundSize: 'cover'
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
                 }}>
                 <Row type="flex" style={{
                         margin: 'auto 0',
@@ -19,12 +20,12 @@ class Banner extends Component {
                         fontSize: '20px'
                 }}> 
                 <Col>
-
-                    <h1>TITLE</h1>
-                    <p>Paragraph of somethings</p>
+                    <h1>THE ADVENTURE BEGINS</h1>
+                    <br/>
+                    <p>Hold tight as we are working hard <br /> to bring astonishing watches to you.</p>
                     <br/><br/>
                     <Button style={{ marginRight: '1em' }}>Apply Now</Button>
-                    <Button>Watch Video</Button>
+                    {/* <Button>Watch Video</Button> */}
                     </Col>
                 </Row>
             </div>

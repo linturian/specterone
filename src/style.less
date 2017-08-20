@@ -125,12 +125,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #layout-header .logo {
-  width: 120px;
   height: 31px;
-  background: #333;
-  border-radius: 6px;
-  margin: 16px 24px 16px 0;
+  letter-spacing: 0.1em;
+  font-size: 1.75em;
   float: left;
+  width: fit-content;
 }
 
 @media (max-width: @screen-xs-max) {
@@ -144,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: @screen-xs-max) {
   .@{layout-prefix-cls} {
     &-header {
-      padding: 0 1em;
+      padding: 0 0.8em;
     }
   }
 }
@@ -343,4 +342,8 @@ div.membership-term:hover{
   .ant-input; 
   width: 220px;
   margin: 8px;
+}
+
+.content-center{
+  text-align: center;
 }
