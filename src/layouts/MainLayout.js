@@ -17,12 +17,13 @@ class MainLayout extends Component {
                             <Col xs={24} md={6}>
                                 <div className="logo" >SPECTER ONE</div>
                             </Col>
-                            <Col xs={24} md={7} >
+                            <Col xs={24} md={9} >
                                 <Menu mode="horizontal" style={{ lineHeight: '64px' }}>
                                     <Menu.Item key="1">APPLY</Menu.Item>
                                     <Menu.Item key="2">COLLECTION</Menu.Item>
-                                    <Menu.Item key="3">FAQ</Menu.Item>
-                                    <Menu.Item key="4">CONTACT</Menu.Item>
+                                    <Menu.Item key="3">PRICING</Menu.Item>
+                                    <Menu.Item key="4">FAQ</Menu.Item>
+                                    <Menu.Item key="5">CONTACT</Menu.Item>
                                     {/* <Menu.Item key="5">LOGIN</Menu.Item> */}
                                 </Menu>
                             </Col>

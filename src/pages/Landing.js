@@ -1,10 +1,11 @@
 import React from 'react';
 import { MainLayout } from '../layouts';
 import Banner from '../components/Banner';
-import { Tier } from '../components/registration';
 import HowItWorks from '../components/HowItWorks';
-import CollectionList from '../components/CollectionList';
-import { Col, Row } from 'antd';
+import TierList from '../components/TierList';
+import Features from '../components/Features';
+import WatchBrandList from '../components/WatchBrandList';
+import { Col, Row, Button, Icon } from 'antd';
 
 
 function Landing(props) {
@@ -14,15 +15,47 @@ function Landing(props) {
     return (
         <MainLayout>
             <Banner />
+            <Features />
             <HowItWorks />
-            <CollectionList />
-            <Row>
-                <Col xs={24} style={{ textAlign: 'center', marginTop: '3em' }}>
-                    <h2>SELECT A PLAN THAT IS SUITABLE FOR YOU.</h2>
+            <TierList />
+            <section style={{
+                backgroundImage: 'url("img/watch-on-male-wrist-opaque.jpg")',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                height: '300px',
+                alignItems: 'center',
+                display: 'flex',
+                backgroundAttachment: 'fixed'
+            }}>
+
+                <Col className="topic" xs={24}>
+                    <h2>SOPHISICATED LUXURY WATCH MODELS</h2>
                 </Col>
-            </Row>
-            <Tier />
-            <Row style={{ margin: '1em 50px' }}>
+            </section>
+            <WatchBrandList />
+            <section id="features">
+                <Row>
+                    <Col className="topic" xs={24}>
+                        <h2>YOUR DREAM WATCH COLLECTION</h2>
+                        <p>Secure your spot today. It's time, well spent.</p>
+                    </Col>
+                </Row>
+                <Row className="list-of-features">
+                    <Col xs={24}>
+                        <Button type="primary" style={{
+                            fontSize: '1.5em',
+                            height: '2.5em',
+                            margin: '2em',
+                            padding: '0 2em'
+                        }}>JOIN THE WAIT LIST</Button>
+                    </Col>
+                    <Col xs={6} style={{padding: '1em 2em'}}><p><Icon type="check" /> A special curated watch collection for your selection.</p></Col>
+                    <Col xs={6} style={{padding: '1em 2em'}}><p><Icon type="check" /> Timepieces come professionally cleaned, mechanically &amp; cosmetically inspected.</p></Col>
+                    <Col xs={6} style={{padding: '1em 2em'}}><p><Icon type="check" /> Hassle-free, exciting &amp; luxurious unboxing experience .</p></Col>
+                    <Col xs={6} style={{padding: '1em 2em'}}><p><Icon type="check" /> Monthly billing, cancel anytime.</p></Col>
+                </Row>
+            </section >
+            {/* <Row style={{ margin: '1em 50px' }}>
                 <Col xs={24} style={{ textAlign: 'center', marginTop: '3em' }}>
                     <h2>FAQ</h2>
                 </Col>
@@ -38,8 +71,8 @@ function Landing(props) {
                         </tbody>
                     </table>
                 </Col>
-            </Row>
-        </MainLayout>
+            </Row> */}
+        </MainLayout >
     )
 }
 
