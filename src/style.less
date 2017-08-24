@@ -114,6 +114,15 @@ h1, h2, h3, h4, h5, h6 {
 // Input
 @input-bg: fade(#fff, 10%);
 
+@media (max-width: @screen-xs-max) {
+  h1{
+    font-size: 1.5em;
+  }
+  h2{
+    font-size: 1.25em;
+  }
+}
+
 // Layout
 @layout-header-background    : #000;
 @layout-body-background   : #000;
@@ -124,34 +133,44 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#layout-header .logo {
-  height: 31px;
+@media (max-width:  @screen-md-max) {
+    .@{layout-prefix-cls} {
+      &-header {
+        padding: 0 0.8em;
+      }
+    }
+  }
+
+
+// Logo
+.logo{
+  font-family: 'Krona One';
+  font-size: 3em;
+}
+
+.@{layout-prefix-cls} .logo {
   letter-spacing: 0.1em;
   font-size: 1.75em;
   float: left;
   width: fit-content;
 }
 
-@media (max-width: @screen-xs-max) {
-  #layout-header .logo {
-    margin: 16px auto;
-    float: none;
-  }
-}
-
-
-@media (max-width: @screen-xs-max) {
-  .@{layout-prefix-cls} {
-    &-header {
-      padding: 0 0.8em;
-    }
+@media (max-width: @screen-md-max) {
+  .@{layout-prefix-cls} .logo {
+    font-size: 1.5em;
   }
 }
 
 // Menu
 .@{menu-prefix-cls} {
+  display: none;
+  border-right: 0px solid #000;
+
   &-horizontal {
+    display: block;
     border-bottom: 1px solid #000;
+    line-height: 63px;
+    float: right;
     
     > .@{menu-prefix-cls}-item,
     > .@{menu-prefix-cls}-submenu {
@@ -168,18 +187,39 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (max-width: @screen-xs-max) {
+@media (max-width: @screen-md-max) {
   .@{menu-prefix-cls} {
-    display: flex;
-    justify-content: space-between;
+    display: block;
 
-    &-item,
-    &-submenu-title {
-      margin: 0;
-      padding: 0 1em;
+    &-horizontal {
+      display: none;
     }
   }
 }
+
+@media (min-width: @screen-lg-min){
+  .cus-collapsed-menu-icon{
+    display: none;
+  }
+}
+
+.cus-collapsed-menu{
+  width: 150px;
+  right: 1px;
+  position: absolute;
+  > .@{menu-prefix-cls}-item,
+  > .@{menu-prefix-cls}-submenu {
+    background-color: black;
+  }
+}
+
+// Banner
+.banner {
+  height: 70vh;
+  vertical-align: middle;
+}
+
+
 
 // Card
 .@{card-prefix-cls} {
@@ -192,23 +232,7 @@ h1, h2, h3, h4, h5, h6 {
 // Input
 @input-placeholder-color     : @disabled-color-dark;
 
-// Logo
-.logo{
-  font-family: 'Krona One';
-  font-size: 3em;
-}
 
-@media (max-width: @screen-xs-max) {
-  .logo{
-    font-size: 2em;
-  }
-  h1{
-    font-size: 1.5em;
-  }
-  h2{
-    font-size: 1.25em;
-  }
-}
 
 //************************//
 p.hr-text{
@@ -356,10 +380,7 @@ div.membership-term:hover{
   margin: 1em 0;
 }
 
-.banner {
-  height: 70vh;
-  vertical-align: middle;
-}
+
 
 // SECTION //
 
@@ -398,13 +419,33 @@ section.white-section{
   }
 }
 
-#tier-list  {
-  .section-content{
-    margin: 3em 0;
+@media (max-width: @screen-md-max) {
+  #how-it-works .details p{
+    margin-bottom: 2em;
   }
 }
 
-// SPECIFIC ELEMENTS
+#tier-list  {
+  .section-content{
+    margin: 3em 0;
+    .middle{
+      border-left: 1px solid lightgrey;
+      border-right: 1px solid lightgrey;
+    }
+  }
+}
+
+@media (max-width: @screen-md-max) {
+  #tier-list  {
+    .section-content{
+      .middle{
+        border-left: 0px;
+        border-right: 0px;
+        margin: 2em 0em;
+      }
+    }
+  }
+}
 
 #view-all-models{
   text-align: center;
@@ -416,3 +457,6 @@ section.white-section{
     padding: 0 2em;
   }
 }
+
+
+

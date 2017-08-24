@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 class WatchBrandList extends Component {
     render() {
         return (
-            <section className="white-section" id="tier-list">
+            <section className="white-section" id="brand-list">
                 <Row className="section-content">
                    <Col xs={6} className="content-center">
                         <img style={{ width: '200px', height: '100px', backgroundColor: 'grey' }} />
