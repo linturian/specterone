@@ -13,7 +13,7 @@ class TierList extends Component {
                 </Row>
                 <Row className="section-content">
                     <TierItem title="ENTHUSIAST" price="starting $247/month" />
-                    <TierItem title="AFRICIONADO" price="starting $497/month" style={{borderLeft: '1px solid lightgrey', borderRight: '1px solid lightgrey'}} />
+                    <TierItem title="AFRICIONADO" price="starting $497/month" className="middle"  />
                     <TierItem title="CONNOISSEUR" price="starting $897/month" />
                 </Row>
                 <Row id="view-all-models">
@@ -30,9 +30,10 @@ class TierItem extends Component {
             padding: '0 1em',
             ...this.props.style
         }
+        let className = "content-center " + this.props.className
         console.log(style);
         return (
-            <Col xs={24} md={8} className="content-center" style={style}>
+            <Col xs={24} md={8} className={className} style={style}>
                 <Col xs={24} style={{marginBottom: '2em'}}>
                     <span style={{fontSize: '1.5em', fontWeight: '600'}}>{this.props.title}</span>
                     <br />

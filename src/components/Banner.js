@@ -23,9 +23,8 @@ class Banner extends Component {
                     <Col>
                         <h2>WELCOME TO SPECTER ONE</h2>
                         <br />
-                        <p style={{ opacity: '.75' }}>Hold tight as we are working hard <br /> to bring astonishing watches to you.</p>
-                        <br /><br />
-                        <Button style={{ marginRight: '1em' }}>Apply Now</Button>
+                        <p style={{ opacity: '.75', width: '300px' }}>Hold tight as we are working hard to bring astonishing watches to you.</p>
+                        <Button style={{ margin: '3em 1em 2em 0em' }}>Apply Now</Button>
                         {/* <Button>Watch Video</Button> */}
                     </Col>
                 </Row>
