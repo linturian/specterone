@@ -42,12 +42,19 @@ function Landing(props) {
                 </Row>
                 <Row className="list-of-features">
                     <Col xs={24}>
-                        <Button type="primary" style={{
+                        <form action="//specterone.us15.list-manage.com/subscribe/post?u=3b5936bf6be301a299947c2f3&amp;id=abf3b3e242" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+                            <div style={{ position: 'absolute', left: '-5000px', }} aria-hidden="true">
+                                <input type="text" name="b_3b5936bf6be301a299947c2f3_abf3b3e242" tabIndex="-1" value="" />
+                            </div>
+                            <div className="clear">
+                                <Button type="primary" style={{
                             fontSize: '1.5em',
                             height: '2.5em',
                             margin: '2em',
                             padding: '0 2em'
-                        }}>JOIN THE WAIT LIST</Button>
+                        }} htmlType="submit" name="subscribe" id="mc-embedded-subscribe">JOIN THE WAIT LIST</Button>
+                            </div>
+                        </form>
                     </Col>
                     <Col xs={6} style={{padding: '1em 2em'}}><p><Icon type="check" /> A special curated watch collection for your selection.</p></Col>
                     <Col xs={6} style={{padding: '1em 2em'}}><p><Icon type="check" /> Timepieces come professionally cleaned, mechanically &amp; cosmetically inspected.</p></Col>

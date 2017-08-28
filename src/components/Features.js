@@ -4,7 +4,7 @@ import { Col, Row, Icon } from 'antd';
 class Features extends Component {
     render() {
         return (
-            <section id="features" className="white-section">
+            <section id="features">
                 <Row>
                      <Col className="topic" xs={24}>
                         <h2>FEATURES</h2>

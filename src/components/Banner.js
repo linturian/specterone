@@ -24,7 +24,14 @@ class Banner extends Component {
                         <h2>WELCOME TO SPECTER ONE</h2>
                         <br />
                         <p style={{ opacity: '.75', width: '300px' }}>Hold tight as we are working hard to bring astonishing watches to you.</p>
-                        <Button style={{ margin: '3em 1em 2em 0em' }}>Apply Now</Button>
+                        <form action="//specterone.us15.list-manage.com/subscribe/post?u=3b5936bf6be301a299947c2f3&amp;id=abf3b3e242" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+                            <div style={{ position: 'absolute', left: '-5000px', }} aria-hidden="true">
+                                <input type="text" name="b_3b5936bf6be301a299947c2f3_abf3b3e242" tabIndex="-1" value="" />
+                            </div>
+                            <div className="clear">
+                                <Button style={{ margin: '3em 1em 2em 0em' }} htmlType="submit" name="subscribe" id="mc-embedded-subscribe">Apply Now</Button>
+                            </div>
+                        </form>
                         {/* <Button>Watch Video</Button> */}
                     </Col>
                 </Row>
