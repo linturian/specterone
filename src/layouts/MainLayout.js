@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Row, Col } from 'antd';
 import scrollToElement from 'scroll-to-element';
+import { Link } from 'react-router-dom';
 const { Header, Footer, Sider, Content } = Layout;
 
 class MainLayout extends Component {
@@ -27,7 +28,9 @@ class MainLayout extends Component {
     menuClickHandler = (e) => {
         if (e.key) {
             this.toggleMenu();
-            scrollToElement('#' + e.key);
+            if(e.key !== 'faq'){
+                scrollToElement('#' + e.key);
+            }
         }
     }
 
@@ -44,7 +47,7 @@ class MainLayout extends Component {
                                 <Menu.Item key="1">APPLY</Menu.Item>
                                 <Menu.Item key="brand-list">COLLECTION</Menu.Item>
                                 <Menu.Item key="tier-list">PRICING</Menu.Item>
-                                <Menu.Item key="4">FAQ</Menu.Item>
+                                <Menu.Item key="faq"><Link to={`/faq`}>FAQ</Link></Menu.Item>
                                 <Menu.Item key="contact">CONTACT</Menu.Item>
                                 {/* <Menu.Item key="5">LOGIN</Menu.Item> */}
                             </Menu>
