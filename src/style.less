@@ -213,6 +213,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// Collapse borderless
+.@{collapse-prefix-cls} {
+  &-borderless {
+    background-color: white;
+    border: 0;
+  }
+  &-borderless > &-item > &-header {
+    color: black;
+    font-weight: 600;
+    &:hover {
+      background-color: @collapse-header-bg;
+    }
+  }
+  &-content {
+    color: black;
+  }
+}
+
 // Banner
 .banner {
   height: 70vh;
@@ -475,23 +493,4 @@ section.white-section{
   }
 }
 
-#faq{
-  .faq-content{
-    p{
-      padding-bottom: 1em;
-      line-height: 1.6;
-    }
-    p.question{
-      font-size: 1.25em;
-      padding: 1em 0;
-      font-weight: 600;
-    }
-    ul{
-      padding: 0 1em;
-      li{
-        padding: 0.25em 0;
-      }
-    }
-  }
-}
 
