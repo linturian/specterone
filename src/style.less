@@ -1,31 +1,38 @@
 @import "../node_modules/antd/dist/antd.less";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Krona+One');
+@import "layouts/layout.less";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Lato:100,300,400,700,900');
 
 // see list of variables in
 // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
 
-@primary-color: white;
-// @primary-2: 'red';  // replace tint(@primary-color, 80%)
-// // unused
-// @primary-3: 'blue';
-// @primary-4: 'green';
-// // Color used to control the text color in many active and hover states.
-// @primary-5: 'orange';  // replace tint(@primary-color, 20%)
-// @primary-6: 'purple';                                // don't use, use @primary-color
-// // Color used to control the text color of active buttons.
-// @primary-7: 'pink';  // replace shade(@primary-color, 5%)
-// // unused
-// @primary-8: 'yellow';
+// -------- Colors -----------
+@primary-color          : #fbfbfb;
+// @info-color             : @blue-6;
+// @success-color          : @green-6;
+// @error-color            : @red-6;
+// @highlight-color        : @red-6;
+// @warning-color          : @yellow-6;
+// @normal-color           : #d9d9d9;
 
-@body-background: #000;
-@component-background: #000;
+@body-background            : #000;
+@component-background       : #000;
 
-@text-color: fade(#fff, 90%);
+// -------- Typography -----------
+@font-family                : 'Lato', sans-serif;
+@heading-font-family        : @font-family;
+@heading-color              : #fff;
+@text-color                 : @primary-color;
+@text-color-secondary       : fade(@primary-color, 67%);
+@heading-color-dark         : #000;
+@text-color-dark            : #0E0E0E;
+@text-color-secondary-dark  : fade(@text-color-dark, 80%);
 @font-size-base: 14px;
+
+// -------- Border -----------
 @border-radius-base: 0px;
 @border-radius-radio: 4px;
 @border-radius-sm: 0px;
-@font-family: 'Open Sans', sans-serif;
+
 
 // Shadow
 @shadow-color           : #fff;
@@ -41,14 +48,20 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
     letter-spacing: 0.04em;
 }
 
-// Header
-@heading-color: #fff;
-@heading-font-family: 'Roboto', sans-serif;
-
+// -------- Header -----------
 h1, h2, h3, h4, h5, h6 {
   color: @heading-color;
   font-family: @heading-font-family;
   letter-spacing: 0.2em;
+}
+
+h3{
+  font-size: 1em;
+}
+
+// -------- P -----------
+p{
+  font-weight: 300;
 }
 
 // Button
@@ -123,117 +136,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Layout
-@layout-header-background    : #000;
-@layout-body-background   : #000;
-
-.@{layout-prefix-cls} {
-  &-header {
-    height: 100%;
-  }
-}
-
-@media (max-width:  @screen-md-max) {
-    .@{layout-prefix-cls} {
-      &-header {
-        padding: 0 0.8em;
-      }
-    }
-  }
-
-
-// Logo
-.logo{
-  font-family: 'Krona One';
-  font-size: 3em;
-}
-
-.@{layout-prefix-cls} .logo {
-  letter-spacing: 0.1em;
-  font-size: 1.75em;
-  float: left;
-  width: fit-content;
-}
-
-@media (max-width: @screen-md-max) {
-  .@{layout-prefix-cls} .logo {
-    font-size: 1.5em;
-  }
-}
-
-// Menu
-.@{menu-prefix-cls} {
-  display: none;
-  border-right: 0px solid #000;
-
-  &-horizontal {
-    display: block;
-    border-bottom: 1px solid #000;
-    line-height: 63px;
-    float: right;
-    
-    > .@{menu-prefix-cls}-item,
-    > .@{menu-prefix-cls}-submenu {
-      border-bottom: 0px;
-
-      &:hover,
-      &-active,
-      &-open,
-      &-selected {
-        border-bottom: 0px;
-        color: @primary-color;
-      }
-    }
-  }
-}
-
-@media (max-width: @screen-md-max) {
-  .@{menu-prefix-cls} {
-    display: block;
-
-    &-horizontal {
-      display: none;
-    }
-  }
-}
-
-@media (min-width: @screen-lg-min){
-  .cus-collapsed-menu-icon{
-    display: none;
-  }
-}
-
-.cus-collapsed-menu{
-  width: 150px;
-  right: 1px;
-  position: absolute;
-  > .@{menu-prefix-cls}-item,
-  > .@{menu-prefix-cls}-submenu {
-    background-color: black;
-  }
-}
-
-// Collapse borderless
-.@{collapse-prefix-cls} {
-  &-borderless {
-    background-color: white;
-    border: 0;
-  }
-  &-borderless > &-item > &-header {
-    color: black;
-    font-weight: 600;
-    &:hover {
-      background-color: @collapse-header-bg;
-    }
-  }
-  &-content {
-    color: black;
-  }
-}
-
 // Banner
 .banner {
-  height: 70vh;
+  height: 95vh;
   vertical-align: middle;
 }
 
@@ -323,6 +228,43 @@ div.membership-term:hover{
     transition: all 0s;
 }
 
+.tier-collection{
+  padding: 10px;
+  .tier-name{
+    padding-bottom: 1em;
+    text-align: center;
+    h2{
+      font-weight: bolder;
+        display: table;
+        white-space: nowrap;
+        &:before, &:after {
+          border-top: 1px solid #C7C7C7;
+          content: '';
+          display: table-cell;
+          position: relative;
+          top: 0.65em;
+          width: 50%;
+        }
+        &:before { right: 2%; }
+        &:after { left: 2%; }
+    }
+  }
+}
+.watch-item {
+  text-align: center;
+  margin: 1em 0;
+  .watch-image{
+    img{
+      width: 200px;
+    }
+  }
+  .watch-details{
+    p{
+      color: #C7C7C7;
+    }
+  }
+}
+
 .watch-card.reserved .watch-image {
     opacity: 0.3;
 
@@ -390,50 +332,75 @@ div.membership-term:hover{
   text-align: center;
 }
 
-.list-of-features{
-  text-align: center;
-}
-
-.list-of-features p{
-  margin: 1em 0;
-}
 
 
-
-// SECTION //
-
+// -------- Section -----------
 section {
-  padding: 4.5em 50px;
+  padding: 120px 0px;
   
-  .topic{
+  .section-title{
     text-align: center;
-    margin-bottom: 1.5em; 
-    h2{
-      font-weight: 700;
-      font-size: 2em;
+    padding-bottom: 90px;
+
+    h1{
+      > span {
+        font-weight: 900;
+      }
     }
   }
 
-  .section-content{
-    margin: 3em 50px;
+  .section-title-more{
+    letter-spacing: 0.3em;
+    font-size: 0.7em;
+    line-height: 3em; 
+    color: @text-color-secondary;
   }
+
+  .section-content{
+    font-size: 1.15em;
+  }
+
 }
 
 section.white-section{
   background-color: white;
-  color: black;
-  .topic{
-    h2{
-      color: black;
+  color: @text-color-dark;
+  .section-title{
+    h1{
+      color: @heading-color-dark;
     }
+  }
+  .section-title-more{
+    color: @text-color-secondary-dark;
+    
+  }
+}
+
+// -------- Features -----------
+#what-to-expect-section{
+  text-align: center;
+  h3{
+    padding: 2em 1em 1em;
+  }
+  img{
+    width: 200px;
+    height: 200px;
+  }
+  p{
+    color: @text-color-secondary;
+    width: 220px;
+    margin: 0 auto;
   }
 }
 
 #how-it-works .details{
-  margin-top: 2em;
-  
+  .@{iconfont-css-prefix} {
+    color: @text-color-secondary-dark;
+    font-size: 30px;
+  }
   p {
-    margin-top: 1em;
+    margin: 1em auto 0;
+    width: 220px;
   }
 }
 
@@ -443,9 +410,10 @@ section.white-section{
   }
 }
 
+
+// -------- Tier List -----------
 #tier-list  {
   .section-content{
-    margin: 3em 0;
     .middle{
       border-left: 1px solid lightgrey;
       border-right: 1px solid lightgrey;
@@ -474,7 +442,11 @@ section.white-section{
   }
 }
 
+
+// -------- Brand List -----------
 #brand-list {
+  padding-left: 120px;
+  padding-right: 120px;
   img{
     max-width:100%; 
     max-height:100%;
@@ -492,5 +464,20 @@ section.white-section{
 
   }
 }
+
+#faq{
+  padding-left: 15em;
+  padding-right: 15em;
+  font-size: 16px;
+
+  h2{
+    letter-spacing: .04em;
+  }
+
+  .content{
+    padding-bottom: 1em;
+  }
+}
+
 
 

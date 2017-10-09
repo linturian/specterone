@@ -1,0 +1,120 @@
+// -------- Layout -----------
+@layout-header-background : #000;
+@layout-body-background : #000;
+
+.@{layout-prefix-cls} {
+  &-header {
+    position: fixed;
+    line-height: 64px;
+    background-color: @layout-header-background;
+    width: 100vw;
+    z-index: 99;
+  }
+  &-content {
+    margin-top: 64px;
+  }
+}
+
+@media (max-width : @screen-md-max) {
+  .@{layout-prefix-cls} {
+    &-header {
+      padding: 0 0.8em;
+    }
+	}
+}
+
+// -------- Logo -----------
+.logo {
+	font-family: 'Krona One';
+  font-size: 3em;
+}
+
+.@{layout-prefix-cls} .logo {
+  float: left;
+  height: 50px;
+  margin: 6px 0;
+}
+
+@media (max-width: @screen-md-max) {
+  .@{layout-prefix-cls} .logo {
+    font-size: 1.5em;
+  }
+}
+
+// -------- Menu -----------
+.@{menu-prefix-cls} {
+  display: none;
+  border-right: 0px solid #000;
+  color: @text-color-secondary;
+	
+	&-horizontal {
+    display: block;
+    border-bottom: 1px solid #000;
+    line-height: 63px;
+    float: right;
+	
+		>.@{menu-prefix-cls}-item,
+		>.@{menu-prefix-cls}-submenu {
+      border-bottom: 0px;
+		
+			&:hover,
+      &-active,
+      &-open,
+      &-selected {
+        border-bottom: 0px;
+      }
+		
+			>a {
+        color: @text-color-secondary;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-md-max) {
+  .@{menu-prefix-cls} {
+    display: block;
+	
+		&-horizontal {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .cus-collapsed-menu-icon {
+    display: none;
+  }
+}
+
+.cus-collapsed-menu {
+  width: 150px;
+  right: 1px;
+  position: absolute;
+	
+	>.@{menu-prefix-cls}-item,
+  >.@{menu-prefix-cls}-submenu {
+    background-color: black;
+  }
+} 
+
+// Collapse borderless
+.@{collapse-prefix-cls} {
+  &-borderless {
+    background-color: white;
+    border: 0;
+  }
+
+	&-borderless>&-item>&-header {
+    color: black;
+    font-weight: 600;
+ 
+		&:hover {
+      background-color: @collapse-header-bg;
+    }
+  }
+	
+	&-content {
+    color: black;
+  }
+}
