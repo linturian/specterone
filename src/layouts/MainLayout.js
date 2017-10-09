@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon, Row, Col } from 'antd';
+import { Layout, Menu, Icon, Row, Col, Button } from 'antd';
 import scrollToElement from 'scroll-to-element';
 import { Link } from 'react-router-dom';
 const { Header, Footer, Sider, Content } = Layout;
@@ -37,18 +37,18 @@ class MainLayout extends Component {
     render() {
         return (
             <Layout>
-                <Header>
-                    <Row type="flex" justify="space-between">
+                <Header >
+                    <Row>
                         <Col xs={23} md={6}>
-                            <div className="logo" >SPECTER ONE</div>
+                            <Link to={`/`}><img className="logo" src="/img/specter-one-logo.jpg"/></Link>
                         </Col>
                         <Col lg={18} >
                             <Menu mode="horizontal" onClick={this.menuClickHandler}>
-                                <Menu.Item key="1">APPLY</Menu.Item>
-                                <Menu.Item key="brand-list">COLLECTION</Menu.Item>
-                                <Menu.Item key="tier-list">PRICING</Menu.Item>
-                                <Menu.Item key="faq"><Link to={`/faq`}>FAQ</Link></Menu.Item>
+                                <Menu.Item key="collection"><Link to={`/collection`}>COLLECTION</Link></Menu.Item>
+                                <Menu.Item key="tier-list"><Link to={`/`}>PRICING</Link></Menu.Item>
+                                <Menu.Item key="faq"><Link to={`/faq`}>HOW IT WORKS</Link></Menu.Item>
                                 <Menu.Item key="contact">CONTACT</Menu.Item>
+                                <Menu.Item key="apply"><Button>JOIN THE WAITLIST</Button></Menu.Item>
                                 {/* <Menu.Item key="5">LOGIN</Menu.Item> */}
                             </Menu>
                         </Col>
@@ -58,10 +58,10 @@ class MainLayout extends Component {
                     </Row>
                     {!this.state.isMenuCollapsed && <Menu className="cus-collapsed-menu"
                         onClick={this.menuClickHandler} >
-                        <Menu.Item key="1">APPLY</Menu.Item>
-                        <Menu.Item key="brand-list">COLLECTION</Menu.Item>
+                        <Menu.Item key="apply">APPLY</Menu.Item>
+                        <Menu.Item key="collection"><Link to={`/collection`}>COLLECTION</Link></Menu.Item>
                         <Menu.Item key="tier-list">PRICING</Menu.Item>
-                        <Menu.Item key="4">FAQ</Menu.Item>
+                        <Menu.Item key="faq"><Link to={`/faq`}>HOW IT WORKS</Link></Menu.Item>
                         <Menu.Item key="contact">CONTACT</Menu.Item>
                         {/* <Menu.Item key="5">LOGIN</Menu.Item> */}
                     </Menu>}
@@ -74,8 +74,8 @@ class MainLayout extends Component {
                         <Col xs={24} md={4}>CONTACT OUR CONCIERGE</Col>
                         <Col xs={24} md={5}>
                             <span style={{ marginRight: '2em' }}><Icon type="mail" /> concierge@specterone.com</span>
-                            <a href="https://www.facebook.com/SpecterOneWatches/"><i className="fa fa-facebook-official" aria-hidden="true" style={{marginRight: '2em'}}></i></a>  
-                            <a href="https://www.instagram.com/specteronewatches/"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/SpecterOneWatches/"><i className="fa fa-facebook-official" aria-hidden="true" style={{marginRight: '2em', color:'white'}}></i></a>  
+                            <a href="https://www.instagram.com/specteronewatches/"><i className="fa fa-instagram" aria-hidden="true"  style={{color:'white'}}></i></a>
                             {/* <Icon type="phone" /> +65-1234-1234 */}
                             </Col>
                     </Row>

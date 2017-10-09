@@ -1,0 +1,111 @@
+[
+    {
+        "watch-name": "Glashutte",
+        "brand": "A. Lange & Söhne",
+        "img-url": "img/collection/a-lange-sohne-glashutte-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Big Bang Ceramic",
+        "brand": "Hublot",
+        "img-url": "img/collection/hublot-big-bang-ceramic-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Big Bang Steel",
+        "brand": "Hublot",
+        "img-url": "img/collection/hublot-big-bang-steel-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Big Bang Steel Black",
+        "brand": "Hublot",
+        "img-url": "img/collection/hublot-big-bang-steel-black-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Big Bang Steel Ceramic",
+        "brand": "Hublot",
+        "img-url": "img/collection/hublot-big-bang-steel-ceramic-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Classic Fusion Black Carbon Figer",
+        "brand": "Hublot",
+        "img-url": "img/collection/hublot-classic-fusion-black-carbon-figer-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Classic Fusion Chronograph Black",
+        "brand": "Hublot",
+        "img-url": "img/collection/hublot-classic-fusion-chronograph-black-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Classic Fusion Chronograph White",
+        "brand": "Hublot",
+        "img-url": "img/collection/hublot-classic-fusion-chronograph-white-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Deep Sea Chronograph",
+        "brand": "Jaeger",
+        "img-url": "img/collection/jaeger-deep-sea- chronograph-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Daytona",
+        "brand": "Rolex",
+        "img-url": "img/collection/rolex-daytona-aficionado.png",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "GMT Master II Batman",
+        "brand": "Rolex",
+        "img-url": "img/collection/rolex-gmt-master-II-batman-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "GMT Master II Coke",
+        "brand": "Rolex",
+        "img-url": "img/collection/rolex-gmt-master-II-coke-aficionado.png",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "GMT Master II Pepsi",
+        "brand": "Rolex",
+        "img-url": "img/collection/rolex-gmt-master-II-pepsi-aficionado.png",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Submariner Hulk",
+        "brand": "Rolex",
+        "img-url": "img/collection/rolex-submariner-hulk-aficionado.png",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Submariner Two Tone",
+        "brand": "Rolex",
+        "img-url": "img/collection/rolex-submariner-two-tone-aficionado.png",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Dual Time",
+        "brand": "Ulysse Nardin",
+        "img-url": "img/collection/ulysse-dual-time-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Marine Chronometer",
+        "brand": "Ulysse Nardin",
+        "img-url": "img/collection/ulysse-marine-chronometer-aficionado.jpg",
+        "tier": "Aficionado"        
+    },
+    {
+        "watch-name": "Master Ultra Thin Reserve De Marche",
+        "brand": "Ulysse Nardin",
+        "img-url": "img/collection/ulysse-master-ultra-thin-reserve-de-marche-aficionado.jpg",
+        "tier": "Aficionado"        
+    }
+]
+
