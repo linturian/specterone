@@ -190,6 +190,59 @@ p{
   letter-spacing  : 0.08em;
 }
 
+// -------- Section -----------
+section {
+  padding: 120px 0px;
+
+  @media (max-width : @screen-xs-max) {
+    padding: 60px 0px;
+  }
+  
+  .section-title{
+    text-align: center;
+    padding-bottom: 90px;
+
+    @media (max-width : @screen-xs-max) {
+      padding-bottom: 45px;
+    }
+
+    h1{
+      > span {
+        font-weight: 900;
+      }
+    }
+  }
+
+  .section-title-more{
+    letter-spacing: 0.3em;
+    font-size: 0.7em;
+    line-height: 3em; 
+    color: @text-color-secondary;
+  }
+
+  .section-content{
+    font-size: 1.15em;
+    p{
+      padding-bottom: 2em;
+    }
+  }
+}
+
+section.white-section{
+  background-color: white;
+  color: @text-color-dark;
+  .section-title{
+    h1{
+      color: @heading-color-dark;
+    }
+  }
+  .section-title-more{
+    color: @text-color-secondary-dark;
+    
+  }
+}
+
+
 p.hr-text{
     overflow: hidden;
     text-align: center;
@@ -366,50 +419,6 @@ div.membership-term:hover{
 
 
 
-// -------- Section -----------
-section {
-  padding: 120px 0px;
-
-  @media (max-width : @screen-xs-max) {
-    padding: 60px 0px;
-  }
-  
-  .section-title{
-    text-align: center;
-    padding-bottom: 90px;
-
-    h1{
-      > span {
-        font-weight: 900;
-      }
-    }
-  }
-
-  .section-title-more{
-    letter-spacing: 0.3em;
-    font-size: 0.7em;
-    line-height: 3em; 
-    color: @text-color-secondary;
-  }
-
-  .section-content{
-    font-size: 1.15em;
-  }
-}
-
-section.white-section{
-  background-color: white;
-  color: @text-color-dark;
-  .section-title{
-    h1{
-      color: @heading-color-dark;
-    }
-  }
-  .section-title-more{
-    color: @text-color-secondary-dark;
-    
-  }
-}
 
 // -------- Features -----------
 #what-to-expect-section{

@@ -55,37 +55,27 @@ function Landing(props) {
                 </Row>
                 <Row type="flex" justify="center">
                     <Col className="section-content" xs={18}>
-                       <Row>
-                           <Col xs={24} sm={6}>
+                       <Row type="flex" justify="center" align="top">
+                           <Col xs={24} sm={12} lg={6}>
                                 <img src="img/what-to-expect/access-to-watch-collection.jpg" alt="access to watch collection" />
                                 <h3>ACCESS TO WATCH COLLECTION</h3>
-                            </Col>
-                            {/*   <Col xs={6}>
-                                <img src="img/what-to-expect/get-rewarded.jpg" alt="get rewarded for enjoying" />
-                                <h3>GET REWARDED FOR ENJOYING</h3>
-                            </Col>
-                            <Col xs={6}>
-                                <img src="img/what-to-expect/love-it-own-it.jpg" alt="love it own it" />
-                                <h3>LOVE IT? OWN IT</h3>
-                            </Col>
-                            <Col xs={6}>
-                                <img src="img/what-to-expect/live-your-life.jpg" alt="live your life" />
-                                <h3>LIVE YOUR LIFE</h3>
-                            </Col>*/}
-                        </Row>
-                         <Row>
-                            <Col xs={24} sm={6}>
                                 <p>Pick the watch you love, Unbox the experience, Switch a new timepiece for every occasion.</p>
                             </Col>
-                        {/*    <Col xs={6}>
+                            <Col xs={24} sm={12} lg={6}>
+                                <img src="img/what-to-expect/get-rewarded.jpg" alt="get rewarded for enjoying" />
+                                <h3>GET REWARDED FOR ENJOYING</h3>
                                 <p>Receive membership points as you enjoy your new timepiece!</p>
                             </Col>
-                            <Col xs={6}>
+                            <Col xs={24} sm={12} lg={6}>
+                                <img src="img/what-to-expect/love-it-own-it.jpg" alt="love it own it" />
+                                <h3>LOVE IT? OWN IT</h3>
                                 <p>Purchase the watch you love from us!</p>
                             </Col>
-                            <Col xs={6}>
+                            <Col xs={24} sm={12} lg={6}>
+                                <img src="img/what-to-expect/live-your-life.jpg" alt="live your life" />
+                                <h3>LIVE YOUR LIFE</h3>
                                 <p>Enjoy lifestyle benefits from our exclusive partners!</p>
-                            </Col>*/}
+                            </Col>
                         </Row>
                     </Col>
                 </Row>
