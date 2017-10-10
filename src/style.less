@@ -267,7 +267,7 @@ section.white-section{
         padding-bottom: 2em;
       }
     }
-    
+
     .middle{
       border-left: 1px solid lightgrey;
       border-right: 1px solid lightgrey;
@@ -289,6 +289,48 @@ section.white-section{
     }
   }
 }
+
+// -------- How it works -----------
+#how-it-works .details{
+  @media (max-width: @screen-md-max) {
+    margin-bottom: 2.5em;
+  }
+
+  .@{iconfont-css-prefix} {
+    color: @text-color-secondary-dark;
+    font-size: 30px;
+  }
+
+  p {
+    margin: 1em auto 0;
+    width: 220px;
+
+    @media (max-width: @screen-md-max) {
+      margin-bottom: 0em;
+      padding-bottom: 0em;
+    }
+  }
+}
+
+// -------- What to expect -----------
+#what-to-expect-section{
+  text-align: center;
+  h3{
+    padding: 2em 1em 1em;
+  }
+  img{
+    width: 200px;
+    height: 200px;
+  }
+  p{
+    color: @text-color-secondary;
+    width: 220px;
+    margin: 0 auto;
+  }
+}
+
+
+
 
 
 p.hr-text{
@@ -468,39 +510,6 @@ div.membership-term:hover{
 
 
 
-// -------- Features -----------
-#what-to-expect-section{
-  text-align: center;
-  h3{
-    padding: 2em 1em 1em;
-  }
-  img{
-    width: 200px;
-    height: 200px;
-  }
-  p{
-    color: @text-color-secondary;
-    width: 220px;
-    margin: 0 auto;
-  }
-}
-
-#how-it-works .details{
-  .@{iconfont-css-prefix} {
-    color: @text-color-secondary-dark;
-    font-size: 30px;
-  }
-  p {
-    margin: 1em auto 0;
-    width: 220px;
-  }
-}
-
-@media (max-width: @screen-md-max) {
-  #how-it-works .details p{
-    margin-bottom: 2em;
-  }
-}
 
 
 

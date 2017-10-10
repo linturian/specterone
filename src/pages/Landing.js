@@ -21,7 +21,7 @@ function Landing(props) {
                     alignItems: 'center'
                 }}>
                     <Col id="apply" xs={24}>
-                        <h1 style={{fontWeight: '900'}}>WELCOME TO SPECTER ONE</h1>
+                        <h1 style={{ fontWeight: '900' }}>WELCOME TO SPECTER ONE</h1>
                         <br />
                         <p className="banner-tag-line">
                             Hold tight as we are working hard to bring astonishing watches to you
@@ -43,7 +43,7 @@ function Landing(props) {
                         </form>
                     </Col>
                 </Row>
-            </Parallax> 
+            </Parallax>
             <section id="what-to-expect-section">
                 <Row>
                     <Col className="section-title" xs={24}>
@@ -55,8 +55,8 @@ function Landing(props) {
                 </Row>
                 <Row type="flex" justify="center">
                     <Col className="section-content" xs={18}>
-                       <Row type="flex" justify="center" align="top">
-                           <Col xs={24} sm={12} lg={6}>
+                        <Row type="flex" justify="center" align="top">
+                            <Col xs={24} sm={12} lg={6}>
                                 <img src="img/what-to-expect/access-to-watch-collection.jpg" alt="access to watch collection" />
                                 <h3>ACCESS TO WATCH COLLECTION</h3>
                                 <p>Pick the watch you love, Unbox the experience, Switch a new timepiece for every occasion.</p>
@@ -167,34 +167,36 @@ function Landing(props) {
                 </Row>
                 <Row type="flex" justify="center" className="section-content">
                     <Col xs={18}>
-                        <Col xs={24} md={6} className="content-center">
-                            <div className="details">
-                                <Icon type="edit"/>
-                                <p>1. APPLY</p>
-                                <p>Register account with us and subscribe to one of the three tiers</p>
-                            </div>
-                        </Col>
-                        <Col xs={24} md={6} className="content-center">
-                            <div className="details">
-                                <Icon type="select" />
-                                <p>2. CHOOSE</p>
-                                <p>Browse our watch collection and pick your favourites</p>
-                            </div>
-                        </Col>
-                        <Col xs={24} md={6} className="content-center">
-                            <div className="details">
-                                <Icon type="gift" />
-                                <p>3. RECEIVE</p>
-                                <p>Watches will be delivered to you every subscription cycle</p>
-                            </div>
-                        </Col>
-                        <Col xs={24} md={6} className="content-center">
-                            <div className="details">
-                                <Icon type="rollback" />
-                                <p>4. RETURN</p>
-                                <p>Simply return watches and head to watch collection to select new watches</p>
-                            </div>
-                        </Col>
+                        <Row type="flex" justify="center">
+                            <Col xs={24} sm={12} lg={6} className="content-center">
+                                <div className="details">
+                                    <Icon type="edit" />
+                                    <p>1. APPLY</p>
+                                    <p>Register account with us and subscribe to one of the three tiers</p>
+                                </div>
+                            </Col>
+                            <Col xs={24} sm={12} lg={6} className="content-center">
+                                <div className="details">
+                                    <Icon type="select" />
+                                    <p>2. CHOOSE</p>
+                                    <p>Browse our watch collection and pick your favourites</p>
+                                </div>
+                            </Col>
+                            <Col xs={24} sm={12} lg={6} className="content-center">
+                                <div className="details">
+                                    <Icon type="gift" />
+                                    <p>3. RECEIVE</p>
+                                    <p>Watches will be delivered to you every subscription cycle</p>
+                                </div>
+                            </Col>
+                            <Col xs={24} sm={12} lg={6} className="content-center">
+                                <div className="details">
+                                    <Icon type="rollback" />
+                                    <p>4. RETURN</p>
+                                    <p>Simply return watches and head to watch collection to select new watches</p>
+                                </div>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </section>
