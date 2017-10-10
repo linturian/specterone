@@ -44,7 +44,7 @@ function Landing(props) {
                     </Col>
                 </Row>
             </Parallax> 
-             <section id="what-to-expect-section">
+            <section id="what-to-expect-section">
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">
@@ -87,7 +87,8 @@ function Landing(props) {
                 height: '300px',
                 alignItems: 'center',
                 display: 'flex',
-                backgroundAttachment: 'fixed'
+                backgroundAttachment: 'fixed',
+                padding: '0 1em'
             }}>
                 <Col className="topic" xs={24} style={{ textAlign: 'center' }}>
                     <h2>SOPHISICATED LUXURY WATCH MODELS</h2>

@@ -58,12 +58,11 @@ const ViewCollectionBtn = withRouter(({ history }) => (
 class TierItem extends Component {
     render() {
         const style = {
-            padding: '0 1em',
             ...this.props.style
         }
         const className = "content-center " + this.props.className
         return (
-            <Col xs={24} md={8} className={className} style={style}>
+            <Col xs={24} lg={8} className={className} style={style}>
                 <Col xs={24} style={{ marginBottom: '2em' }}>
                     <h2>{this.props.title}</h2>
                     <p>{this.props.price}</p>

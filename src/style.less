@@ -59,6 +59,15 @@ h3{
   font-size: 1em;
 }
 
+@media (max-width: @screen-xs-max) {
+  h1{
+    font-size: 1.5em;
+  }
+  h2{
+    font-size: 1.25em;
+  }
+}
+
 // -------- P -----------
 p{
   font-weight: 300;
@@ -127,68 +136,7 @@ p{
 // Input
 @input-bg: fade(#fff, 10%);
 
-@media (max-width: @screen-xs-max) {
-  h1{
-    font-size: 1.5em;
-  }
-  h2{
-    font-size: 1.25em;
-  }
-}
 
-
-
-
-// Card
-.@{card-prefix-cls} {
-  &:not(&-no-hovering):hover {
-    border-color  : inherit;
-  }
-}
-
-
-
-/* =========================================
-  SPECIFIC COMPONENTS
-============================================ */
-
-// -------- Banner -----------
-.banner {
-  height: 360px;
-  vertical-align: middle;
-
-  @media (min-width: @screen-sm-min) {
-    height: 410px;
-  }
-  @media (min-width: @screen-md-min) {
-    height: 550px;
-  }
-  @media (min-width: @screen-lg-min) {
-    height: 100vh;
-  }
-
-  h1{
-    font-weight   : 900;
-    width         : 80%;
-    @media (min-width: @screen-sm-min) {
-      width: 70%;
-    }
-  }
-
-  p{
-    width: 80%;
-    @media (min-width: @screen-sm-min) {
-      width: 70%;
-    }
-  }
-}
-
-// -------- Banner Tag Line ----------- 
-.banner-tag-line{
-  opacity         : .75; 
-  font-size       : medium;
-  letter-spacing  : 0.08em;
-}
 
 // -------- Section -----------
 section {
@@ -239,6 +187,106 @@ section.white-section{
   .section-title-more{
     color: @text-color-secondary-dark;
     
+  }
+}
+
+
+
+
+// Card
+.@{card-prefix-cls} {
+  &:not(&-no-hovering):hover {
+    border-color  : inherit;
+  }
+}
+
+
+
+
+/* =========================================
+  SPECIFIC COMPONENTS
+============================================ */
+
+// -------- Banner -----------
+.banner {
+  height: 360px;
+  vertical-align: middle;
+
+  @media (min-width: @screen-sm-min) {
+    height: 410px;
+  }
+  @media (min-width: @screen-md-min) {
+    height: 550px;
+  }
+  @media (min-width: @screen-lg-min) {
+    height: 100vh;
+  }
+
+  h1{
+    font-weight   : 900;
+    width         : 80%;
+    @media (min-width: @screen-sm-min) {
+      width: 70%;
+    }
+  }
+
+  p{
+    width: 80%;
+    @media (min-width: @screen-sm-min) {
+      width: 70%;
+    }
+  }
+}
+
+// -------- Banner Tag Line ----------- 
+.banner-tag-line{
+  opacity         : .75; 
+  font-size       : medium;
+  letter-spacing  : 0.08em;
+}
+
+// -------- Tier List -----------
+#tier-list  {
+  .section-title{
+    @media (max-width: @screen-xs-max) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }  
+  }
+  .section-content{
+    p{
+      @media (max-width: @screen-xs-max) {
+        padding-bottom: 0em;
+      }
+    }
+
+    .content-center{
+      padding-bottom: 1em;
+
+      @media (max-width: @screen-md-max) {
+        padding-bottom: 2em;
+      }
+    }
+    
+    .middle{
+      border-left: 1px solid lightgrey;
+      border-right: 1px solid lightgrey;
+
+      @media (max-width: @screen-md-max) {
+        border-left: 0px;
+        border-right: 0px;
+        margin: 2em 0em;
+      }
+    }
+  }
+
+  #view-all-models{
+    text-align: center;
+    margin-top: 5em;
+    button{
+      font-size: 1em;
+      padding: 0 2em;
+    }
   }
 }
 
@@ -455,36 +503,7 @@ div.membership-term:hover{
 }
 
 
-// -------- Tier List -----------
-#tier-list  {
-  .section-content{
-    .middle{
-      border-left: 1px solid lightgrey;
-      border-right: 1px solid lightgrey;
-    }
-  }
-}
 
-@media (max-width: @screen-md-max) {
-  #tier-list  {
-    .section-content{
-      .middle{
-        border-left: 0px;
-        border-right: 0px;
-        margin: 2em 0em;
-      }
-    }
-  }
-}
-
-#view-all-models{
-  text-align: center;
-  margin-top: 5em;
-  button{
-    font-size: 1em;
-    padding: 0 2em;
-  }
-}
 
 
 // -------- Brand List -----------
