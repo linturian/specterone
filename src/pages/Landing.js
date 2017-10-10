@@ -46,8 +46,8 @@ function Landing(props) {
                         </form>
                     </Col>
                 </Row>
-            </Parallax>
-            <section id="what-to-expect-section">
+            </Parallax> 
+             <section id="what-to-expect-section">
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">
@@ -58,12 +58,12 @@ function Landing(props) {
                 </Row>
                 <Row type="flex" justify="center">
                     <Col className="section-content" xs={18}>
-                        <Row>
-                            <Col xs={6}>
+                       <Row>
+                           <Col xs={24} sm={6}>
                                 <img src="img/what-to-expect/access-to-watch-collection.jpg" alt="access to watch collection" />
                                 <h3>ACCESS TO WATCH COLLECTION</h3>
                             </Col>
-                            <Col xs={6}>
+                            {/*   <Col xs={6}>
                                 <img src="img/what-to-expect/get-rewarded.jpg" alt="get rewarded for enjoying" />
                                 <h3>GET REWARDED FOR ENJOYING</h3>
                             </Col>
@@ -74,13 +74,13 @@ function Landing(props) {
                             <Col xs={6}>
                                 <img src="img/what-to-expect/live-your-life.jpg" alt="live your life" />
                                 <h3>LIVE YOUR LIFE</h3>
-                            </Col>
+                            </Col>*/}
                         </Row>
-                        <Row>
-                            <Col xs={6}>
+                         <Row>
+                            <Col xs={24} sm={6}>
                                 <p>Pick the watch you love, Unbox the experience, Switch a new timepiece for every occasion.</p>
                             </Col>
-                            <Col xs={6}>
+                        {/*    <Col xs={6}>
                                 <p>Receive membership points as you enjoy your new timepiece!</p>
                             </Col>
                             <Col xs={6}>
@@ -88,7 +88,7 @@ function Landing(props) {
                             </Col>
                             <Col xs={6}>
                                 <p>Enjoy lifestyle benefits from our exclusive partners!</p>
-                            </Col>
+                            </Col>*/}
                         </Row>
                     </Col>
                 </Row>
@@ -238,23 +238,6 @@ function Landing(props) {
                     </Col>
                 </Row>
             </section >
-            {/* <Row style={{ margin: '1em 50px' }}>
-                <Col xs={24} style={{ textAlign: 'center', marginTop: '3em' }}>
-                    <h2>FAQ</h2>
-                </Col>
-                <Col xs={24}>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><h3>1. Lorem ipsum dolor sit amet?</h3></td>
-                            </tr>
-                            <tr>
-                                <td><p>{text}</p></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </Col>
-            </Row> */}
         </MainLayout >
     )
 }

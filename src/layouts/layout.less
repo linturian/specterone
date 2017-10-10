@@ -33,22 +33,39 @@
   float: left;
   height: 50px;
   margin: 6px 0;
+
+  @media (max-width: @screen-sm-max ) {
+    height: 40px;
+    margin: 11px 0;
+  }
 }
 
-@media (max-width: @screen-md-max) {
-  .@{layout-prefix-cls} .logo {
-    font-size: 1.5em;
+// -------- Burger icon -----------
+.burger-menu-icon{
+  display: none;
+  text-align: right;
+
+  @media (max-width: @screen-sm-max ){
+    display: block;
   }
 }
 
 // -------- Menu -----------
 .@{menu-prefix-cls} {
-  display: none;
   border-right: 0px solid #000;
   color: @text-color-secondary;
+
+  a {
+    color: @text-color-secondary;
+  }
 	
 	&-horizontal {
     display: block;
+
+    @media (max-width: @screen-sm-max) {
+      display: none;
+    }
+
     border-bottom: 1px solid #000;
     line-height: 63px;
     float: right;
@@ -63,58 +80,35 @@
       &-selected {
         border-bottom: 0px;
       }
-		
-			>a {
+
+      a {
         color: @text-color-secondary;
       }
     }
   }
 }
 
-@media (max-width: @screen-md-max) {
-  .@{menu-prefix-cls} {
-    display: block;
-	
-		&-horizontal {
-      display: none;
-    }
-  }
-}
-
-@media (min-width: @screen-lg-min) {
-  .cus-collapsed-menu-icon {
-    display: none;
-  }
-}
-
 .cus-collapsed-menu {
-  width: 150px;
-  right: 1px;
-  position: absolute;
-	
-	>.@{menu-prefix-cls}-item,
-  >.@{menu-prefix-cls}-submenu {
-    background-color: black;
+  height: 100%;
+  width: 0; // 0 width - change this with JavaScript
+  position: fixed; 
+  z-index: 1;
+  top: 0;
+  right: 0px;
+  background-color: #000;
+  overflow-x: hidden; // Disable horizontal scroll
+  padding-top: 60px;
+  transition: 0.5s;
+
+  .close-button{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 28px;
   }
+
 } 
 
-// Collapse borderless
-.@{collapse-prefix-cls} {
-  &-borderless {
-    background-color: white;
-    border: 0;
-  }
-
-	&-borderless>&-item>&-header {
-    color: black;
-    font-weight: 600;
- 
-		&:hover {
-      background-color: @collapse-header-bg;
-    }
-  }
-	
-	&-content {
-    color: black;
-  }
+.cus-collapsed-menu.visible{
+  width: 250px;
 }
