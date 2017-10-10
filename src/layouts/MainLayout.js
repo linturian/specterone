@@ -77,8 +77,8 @@ class MainLayout extends Component {
                 </Content>
                 <Footer id="contact">
                     <Row type="flex" justify="space-between">
-                        <Col xs={24} md={4}>CONTACT OUR CONCIERGE</Col>
-                        <Col xs={24} md={5}>
+                        <Col xs={24} sm={7}>CONTACT OUR CONCIERGE</Col>
+                        <Col xs={24} sm={11} md={8} lg={5}>
                             <span style={{ marginRight: '2em' }}><Icon type="mail" /> concierge@specterone.com</span>
                             <a href="https://www.facebook.com/SpecterOneWatches/"><i className="fa fa-facebook-official" aria-hidden="true" style={{ marginRight: '2em', color: 'white' }}></i></a>
                             <a href="https://www.instagram.com/specteronewatches/"><i className="fa fa-instagram" aria-hidden="true" style={{ color: 'white' }}></i></a>
