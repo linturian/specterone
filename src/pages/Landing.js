@@ -15,18 +15,15 @@ function Landing(props) {
                 bgStyle={{
                     opacity: '.30'
                 }}>
-                <Row type="flex" style={{
-                    margin: 'auto 0',
+                <Row className="banner" type="flex" style={{
+                    margin: 'auto 8vw',
                     position: 'absolute',
-                    left: '8vw',
-                    height: '95vh',
                     alignItems: 'center'
                 }}>
-                    <Col id="apply">
+                    <Col id="apply" xs={24}>
                         <h1 style={{fontWeight: '900'}}>WELCOME TO SPECTER ONE</h1>
                         <br />
-                        <p
-                            style={{ opacity: '.75', width: '300px', fontSize: 'medium', letterSpacing: '0.08em' }}>
+                        <p className="banner-tag-line">
                             Hold tight as we are working hard to bring astonishing watches to you
                         </p>
                         <form action="//specterone.us15.list-manage.com/subscribe/post?u=3b5936bf6be301a299947c2f3&amp;id=abf3b3e242" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">

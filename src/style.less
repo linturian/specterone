@@ -136,28 +136,60 @@ p{
   }
 }
 
-// Banner
-.banner {
-  height: 95vh;
-  vertical-align: middle;
-}
 
 
 
 // Card
 .@{card-prefix-cls} {
   &:not(&-no-hovering):hover {
-    border-color: inherit;
+    border-color  : inherit;
   }
 }
 
 
-// Input
-@input-placeholder-color     : @disabled-color-dark;
 
+/* =========================================
+  SPECIFIC COMPONENTS
+============================================ */
 
+// -------- Banner -----------
+.banner {
+  height: 360px;
+  vertical-align: middle;
 
-//************************//
+  @media (min-width: @screen-sm-min) {
+    height: 410px;
+  }
+  @media (min-width: @screen-md-min) {
+    height: 550px;
+  }
+  @media (min-width: @screen-lg-min) {
+    height: 100vh;
+  }
+
+  h1{
+    font-weight   : 900;
+    width         : 80%;
+    @media (min-width: @screen-sm-min) {
+      width: 70%;
+    }
+  }
+
+  p{
+    width: 80%;
+    @media (min-width: @screen-sm-min) {
+      width: 70%;
+    }
+  }
+}
+
+// -------- Banner Tag Line ----------- 
+.banner-tag-line{
+  opacity         : .75; 
+  font-size       : medium;
+  letter-spacing  : 0.08em;
+}
+
 p.hr-text{
     overflow: hidden;
     text-align: center;
