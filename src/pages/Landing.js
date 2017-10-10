@@ -200,7 +200,7 @@ function Landing(props) {
                     </Col>
                 </Row>
             </section>
-            <section id="features">
+            <section id="call-to-action-section">
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">
