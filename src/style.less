@@ -261,6 +261,9 @@ section.white-section{
     }  
   }
   .section-content{
+    padding-left: 120px;
+    padding-right: 120px;
+    
     p{
       @media (max-width: @screen-xs-max) {
         padding-bottom: 0em;
@@ -555,13 +558,36 @@ div.membership-term:hover{
 
   h2{
     letter-spacing: .04em;
+    color: @heading-color-dark;
   }
 
   .content{
     padding-bottom: 1em;
   }
+
+  @collapse-header-bg: @primary-color;
+  @collapse-active-bg: @primary-color;
+
+  .@{collapse-prefix-cls} {
+    .@{collapse-prefix-cls}-header {
+      color: @text-color-dark;
+      background-color: @primary-color;
+
+      .arrow {
+        color: @text-color-secondary-dark;
+      }
+    }
+
+    &-content {
+      color: @text-color-dark;
+      background-color: @primary-color;
+    }
+
+    &-borderless {
+      background-color: @primary-color;
+    }
+  }
+  
+
+  
 }
-
-
-
-

@@ -1,5 +1,6 @@
 {
   "name": "specter-one",
+  "hompage": "https://specterone.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

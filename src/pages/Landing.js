@@ -24,7 +24,7 @@ function Landing(props) {
                         <h1 style={{ fontWeight: '900' }}>WELCOME TO SPECTER ONE</h1>
                         <br />
                         <p className="banner-tag-line">
-                            Hold tight as we are working hard to bring astonishing watches to you
+                            Gain access to your own private watch collection
                         </p>
                         <form action="//specterone.us15.list-manage.com/subscribe/post?u=3b5936bf6be301a299947c2f3&amp;id=abf3b3e242" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
                             <div style={{ position: 'absolute', left: '-5000px', }} aria-hidden="true">
@@ -91,7 +91,7 @@ function Landing(props) {
                 padding: '0 1em'
             }}>
                 <Col className="topic" xs={24} style={{ textAlign: 'center' }}>
-                    <h2>SOPHISICATED LUXURY WATCH MODELS</h2>
+                    <h1>SOPHISICATED LUXURY WATCH MODELS</h1>
                 </Col>
             </section>
             <section className="white-section" id="brand-list">
@@ -162,7 +162,7 @@ function Landing(props) {
                         <p className="section-title-more">
                             JUST A FINAL DETAIL
                         </p>
-                        <h1>HOW IT <span>WORK</span></h1>
+                        <h1>HOW IT <span>WORKS</span></h1>
                     </Col>
                 </Row>
                 <Row type="flex" justify="center" className="section-content">
@@ -172,7 +172,7 @@ function Landing(props) {
                                 <div className="details">
                                     <Icon type="edit" />
                                     <p>1. APPLY</p>
-                                    <p>Register account with us and subscribe to one of the three tiers</p>
+                                    <p>Register account and subscribe with us</p>
                                 </div>
                             </Col>
                             <Col xs={24} sm={12} lg={6} className="content-center">

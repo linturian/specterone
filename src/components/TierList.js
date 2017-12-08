@@ -7,7 +7,7 @@ class TierList extends Component {
         super(props);
 
         const enthusiastLink = 'img/collection/enthusiast/';
-        this.enthusiasts = [enthusiastLink + 'enthusiast-seven-friday.jpg', enthusiastLink + 'enthusiast-tagheur.jpg', enthusiastLink + 'enthusiast-tudor.jpg'];
+        this.enthusiasts = [enthusiastLink + 'enthusiast-tagheur.jpg', enthusiastLink + 'enthusiast-tudor.jpg'];
 
         const africionadoLink = 'img/collection/africionado/';
         this.africionados = [africionadoLink + 'africionado-iwc.jpg', africionadoLink + 'africionado-paneri.jpg', africionadoLink + 'africionado-rolex.jpg'];
@@ -27,19 +27,28 @@ class TierList extends Component {
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">
-                            NOW CHOOSE ON OF OUR
+                            ENJOY WATCHES THROUGH
                         </p>
-                        <h1><span>SUBSCRIPTION</span> TIERS</h1>
+                        <h1>MONTHLY <span>SUBSCRIPTION</span></h1>
                     </Col>
                 </Row>
-                <Row className="section-content">
-                    <TierItem title="ENTHUSIAST" price="starting $197/month" imgSrc={this.enthusiasts} />
-                    <TierItem title="AFICIONADO" price="starting $397/month" className="middle" imgSrc={this.africionados} />
-                    <TierItem title="CONNOISSEUR" price="starting $797/month" imgSrc={this.connoisseurs} />
+                <Row className="section-content" type="flex" justify="center">
+                    
+    
+                    {this.enthusiasts.map(imgSrc => {
+                        return <WatchItem imgSrc={imgSrc} />;
+                    })}
+                    {this.africionados.map(imgSrc => {
+                        return <WatchItem imgSrc={imgSrc} />;
+                    })}
+                    {this.connoisseurs.map(imgSrc => {
+                        return <WatchItem imgSrc={imgSrc} />;
+                    })}
+                   
                 </Row>
-                <Row id="view-all-models">
+                {/* <Row id="view-all-models">
                     <ViewCollectionBtn />
-                </Row>
+                </Row> */}
             </section >
         );
     }
@@ -55,31 +64,10 @@ const ViewCollectionBtn = withRouter(({ history }) => (
   </Button>
 ));
 
-class TierItem extends Component {
-    render() {
-        const style = {
-            ...this.props.style
-        }
-        const className = "content-center " + this.props.className
-        return (
-            <Col xs={24} lg={8} className={className} style={style}>
-                <Col xs={24} style={{ marginBottom: '2em' }}>
-                    <h2>{this.props.title}</h2>
-                    <p>{this.props.price}</p>
-                </Col>
-                {this.props.imgSrc.map(imgSrc => {
-                    return <WatchItem imgSrc={imgSrc} />;
-                })}
-            </Col>
-        );
-    }
-
-}
-
 class WatchItem extends Component {
     render() {
         return (
-            <Col xs={8}>
+            <Col xs={12} md={3} className="content-center">
                 <img style={{ width: '100%', padding: '5px' }} src={this.props.imgSrc} />
             </Col>
         );

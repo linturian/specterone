@@ -29,8 +29,7 @@ class MainLayout extends Component {
 
     menuClickHandler = (e) => {
         if (e.key) {
-            this.toggleMenu();
-            if (e.key !== 'faq') {
+            if (e.key == 'tier-list' || e.key == 'contact') {
                 scrollToElement('#' + e.key);
             }
         }
@@ -47,15 +46,28 @@ class MainLayout extends Component {
                         <Col lg={18} >
                             <Menu mode="horizontal" onClick={this.menuClickHandler}>
                                 <Menu.Item key="collection"><Link to={`/collection`}>COLLECTION</Link></Menu.Item>
-                                <Menu.Item key="tier-list"><Link to={`/`}>PRICING</Link></Menu.Item>
+                                {/* <Menu.Item key="tier-list"><Link to={`/`}>PRICING</Link></Menu.Item> */}
                                 <Menu.Item key="faq"><Link to={`/faq`}>HOW IT WORKS</Link></Menu.Item>
                                 <Menu.Item key="contact">CONTACT</Menu.Item>
-                                <Menu.Item key="apply"><Button>JOIN THE WAITLIST</Button></Menu.Item>
-                                {/* <Menu.Item key="5">LOGIN</Menu.Item> */}
+                                <Menu.Item key="apply">
+                                    <form action="//specterone.us15.list-manage.com/subscribe/post?u=3b5936bf6be301a299947c2f3&amp;id=abf3b3e242" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+                                        <div style={{ position: 'absolute', left: '-5000px', }} aria-hidden="true">
+                                            <input type="text" name="b_3b5936bf6be301a299947c2f3_abf3b3e242" tabIndex="-1" value="" />
+                                        </div>
+                                        <div className="clear">
+                                            <Button
+                                                htmlType="submit"
+                                                name="subscribe"
+                                                id="mc-embedded-subscribe">
+                                                JOIN THE WAITLIST
+                                        </Button>
+                                        </div>
+                                    </form>
+                                </Menu.Item>
                             </Menu>
                         </Col>
                         <Col xs={2} className="burger-menu-icon">
-                            <Icon type="bars" style={{ fontSize: '2em', lineHeight: '63px' }} onClick={this.toggleMenu} />
+                            {this.state.isMenuCollapsed && <Icon type="bars" style={{ fontSize: '2em', lineHeight: '63px' }} onClick={this.toggleMenu} />}
                         </Col>
                     </Row>
 
@@ -63,11 +75,24 @@ class MainLayout extends Component {
                         <a href="javascript:void(0)" className="close-button" onClick={this.toggleMenu}>&times;</a>
                         <Menu mode="inline" onClick={this.menuClickHandler}>
                             <Menu.Item key="collection"><Link to={`/collection`}>COLLECTION</Link></Menu.Item>
-                            <Menu.Item key="tier-list"><Link to={`/`}>PRICING</Link></Menu.Item>
+                            {/* <Menu.Item key="tier-list"><Link to={`/`}>PRICING</Link></Menu.Item> */}
                             <Menu.Item key="faq"><Link to={`/faq`}>HOW IT WORKS</Link></Menu.Item>
                             <Menu.Item key="contact"><Link to={`/`}>CONTACT</Link></Menu.Item>
-                            <Menu.Item key="apply"><Button>JOIN THE WAITLIST</Button></Menu.Item>
-                            {/* <Menu.Item key="5">LOGIN</Menu.Item> */}
+                            <Menu.Item key="apply">
+                                <form action="//specterone.us15.list-manage.com/subscribe/post?u=3b5936bf6be301a299947c2f3&amp;id=abf3b3e242" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+                                    <div style={{ position: 'absolute', left: '-5000px', }} aria-hidden="true">
+                                        <input type="text" name="b_3b5936bf6be301a299947c2f3_abf3b3e242" tabIndex="-1" value="" />
+                                    </div>
+                                    <div className="clear">
+                                        <Button
+                                            htmlType="submit"
+                                            name="subscribe"
+                                            id="mc-embedded-subscribe">
+                                            JOIN THE WAITLIST
+                                        </Button>
+                                    </div>
+                                </form>
+                            </Menu.Item>
                         </Menu>
                     </div>
 

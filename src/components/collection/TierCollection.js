@@ -13,11 +13,6 @@ function TierCollection(props) {
     return (
         <div className="tier-collection">
             <Row>
-                <Col xs={24} className="tier-name">
-                    <h2>{props.tierName}</h2>
-                </Col>
-            </Row>
-            <Row>
                 {watchItems}
             </Row>
         </div>
