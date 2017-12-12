@@ -14,7 +14,11 @@ class Collection extends Component {
     render() {
         return (
             <section>
-                <Row><Col xs={24} style={{ textAlign: 'center', padding: '0 0 1.5em 0' }}><h1 style={{ fontWeight: 'bolder' }}>COLLECTION</h1></Col></Row>
+                <Row className="dark-theme">
+                    <Col xs={24} style={{ textAlign: 'center', padding: '0 0 1.5em 0' }}>
+                        <h1 style={{ fontWeight: 'bolder' }}>COLLECTION</h1>
+                    </Col>
+                </Row>
                 <TierCollection watchList={enthusiastCollection} tierName="ENTHUSIAST" />
                 <TierCollection watchList={aficionadoCollection} tierName="AFICIONADO" />
             </section>

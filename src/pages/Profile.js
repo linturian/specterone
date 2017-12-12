@@ -1,29 +1,55 @@
 import React, { Component } from 'react';
 import { Row, Col, Form, Input, Radio, Button, Alert } from 'antd';
 import { Redirect } from 'react-router-dom';
-import {
-    AuthenticationDetails,
-    CognitoUserPool,
-    CognitoUser
-} from "amazon-cognito-identity-js";
+import { CognitoUserPool, CognitoUser } from "amazon-cognito-identity-js";
 import config from "../config";
+import { authUser } from "../libs/awsLib";
 
 class Profile extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            user: null
+            username: null,
+            givenName: null,
+            familyName: null,
+            gender: null,
+            isEmailVerified: false,
+            isIdentityVerified: false,
+            isMembered: false
         }
     }
 
-    callback = (newUser) => {
-        this.setState({
-            user: newUser
-        });
-        console.log("called back", this.state)
+    async componentWillMount() {
+        try {
+            const user = await authUser()
+            console.log(user);
+            const userInfo = user.signInUserSession.idToken.payload;
+            this.setState({
+                username: userInfo.email,
+                givenName: userInfo.given_name,
+                familyName: userInfo.family_name,
+                gender: userInfo.gender,
+                isEmailVerified: userInfo.email_verified
+            });
+        }
+        catch (e) {
+            console.log(e);
+            this.props.history.push("/");
+        }
     }
 
+    setStatusMessage() {
+        let message = '';
+        if (!this.state.isEmailVerified) {
+            message = "Pending email confirmation";
+        } else if (!this.state.isIdentityVerified) {
+            message = "Pending identity verification";
+        } else if (!this.state.isMembered) {
+            message = "Waiting for approval";
+        }
+        return message;
+    }
 
     render() {
 
@@ -38,12 +64,24 @@ class Profile extends Component {
                 </Row>
                 <Row type="flex" justify="center">
                     <Col xs={18} md={12} style={{ marginBottom: '2em' }}>
-                        <Alert
+                        {!this.state.isEmailVerified && <Alert
+                            message="Email Confirmation Required"
+                            description="To comfirm your email, please follow instruction sent to your mailbox."
+                            type="warning"
+                            showIcon
+                        />}
+                        {!this.state.isIdentityVerified && <Alert
                             message="Documents required"
                             description={<WarningMessage />}
                             type="warning"
                             showIcon
-                        />
+                        />}
+                        {!this.state.isEmailVerified && <Alert
+                            message="Verifying documents"
+                            description="We are in a midst of verifying your documents. Once completed, you will receive an email from us."
+                            type="info"
+                            showIcon
+                        />}
                     </Col>
                 </Row>
                 <Row type="flex" justify="center" className="info-container">
@@ -51,11 +89,11 @@ class Profile extends Component {
                         <span className="section-title">Account Information</span>
                         <Col xs={24} className="details">
                             <span><b>Status</b></span>
-                            <p>Pending identity verification</p>
+                            <p>{this.setStatusMessage()}</p>
                         </Col>
                         <Col xs={12} className="details">
                             <span><b>Email</b></span>
-                            <p>test@test.com</p>
+                            <p>{this.state.username}</p>
                         </Col>
                         <Col xs={12} className="details">
                             <span><b>Password</b></span>
@@ -68,15 +106,15 @@ class Profile extends Component {
                         <span className="section-title">Personal Information</span>
                         <Col xs={12} className="details">
                             <span><b>Given Name</b></span>
-                            <p>Lin</p>
+                            <p>{this.state.givenName}</p>
                         </Col>
                         <Col xs={12} className="details">
                             <span><b>Family Name</b></span>
-                            <p>Ananphumtriphop</p>
+                            <p>{this.state.familyName}p</p>
                         </Col>
                         <Col xs={12} className="details">
                             <span><b>Gender</b></span>
-                            <p>Female</p>
+                            <p>{this.state.gender}</p>
                         </Col>
                         {/* <Col xs={12} className="details">
                                 <span><b>Phone</b></span>
@@ -100,75 +138,6 @@ function WarningMessage(props) {
             </ul>
         </div>
     );
-}
-
-class LoginForm extends Component {
-
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.form.validateFieldsAndScroll(async (err, values) => {
-            if (!err) {
-                await this.login(values.email, values.password);
-                console.log("loggined in")
-            }
-        });
-    }
-
-    login(email, password) {
-        const userPool = new CognitoUserPool({
-            UserPoolId: config.cognito.USER_POOL_ID,
-            ClientId: config.cognito.APP_CLIENT_ID
-        });
-
-        const user = new CognitoUser({ Username: email, Pool: userPool });
-        const authenticationData = { Username: email, Password: password };
-        const authenticationDetails = new AuthenticationDetails(authenticationData);
-
-        return new Promise((resolve, reject) =>
-            user.authenticateUser(authenticationDetails, {
-                onSuccess: result => resolve(),
-                onFailure: err => {
-                    if (err.code == "UserNotConfirmedException") {
-                        alert("Please check your email");
-                    }
-                    if (err.code == "UserNotFoundException") {
-                        alert("Invalid email or password");
-                    }
-                    reject(err)
-                }
-            })
-        );
-    }
-
-    render() {
-        const { getFieldDecorator } = this.props.form;
-        return (
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Item>
-                    {getFieldDecorator('email', {
-                        rules: [{
-                            required: true, message: 'Please input your E-mail!',
-                        }],
-                    })(
-                        <Input placeholder="Email Address" />
-                        )}
-                </Form.Item>
-                <Form.Item>
-                    {getFieldDecorator('password', {
-                        rules: [{
-                            required: true, message: 'Please input your password!',
-                        }],
-                    })(
-                        <Input placeholder="Password" type="password" />
-                        )}
-                </Form.Item>
-
-                <Form.Item>
-                    <Button type="dark" htmlType="submit" style={{ width: '100%' }}>Log In</Button>
-                </Form.Item>
-            </Form>
-        );
-    }
 }
 
 export default Profile;

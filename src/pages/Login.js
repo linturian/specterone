@@ -12,18 +12,9 @@ import config from "../config";
 
 class Login extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: null
-        }
-    }
-
-    callback = (newUser) => {
-        this.setState({
-            user: newUser
-        });
-        console.log("called back", this.state)
+    callback = () => {
+        this.props.userHasAuthenticated(true);
+        this.props.history.push("/profile");
     }
 
     render() {
@@ -32,6 +23,13 @@ class Login extends Component {
         return (
 
             <section className="white-section" id="login">
+                <Row type="flex" justify="center">
+					<Col xs={12} style={{ marginBottom: '42px' }} >
+						<center>
+							<h1>LOG IN</h1>
+						</center>
+					</Col>
+				</Row>
                 {/* <Row type="flex" justify="center">
                         <Col xs={22} md={6}>
                             <FacebookLogin
@@ -71,7 +69,7 @@ class LoginForm extends Component {
         this.props.form.validateFieldsAndScroll(async (err, values) => {
             if (!err) {
                 await this.login(values.email, values.password);
-                console.log("loggined in")
+                this.props.callback(values.email);
             }
         });
     }
@@ -126,7 +124,7 @@ class LoginForm extends Component {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button type="dark" htmlType="submit" style={{ width: '100%' }}>Log In</Button>
+                    <Button type="primary" htmlType="submit" style={{ width: '100%' }}>Log In</Button>
                 </Form.Item>
             </Form>
         );

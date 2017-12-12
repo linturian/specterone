@@ -6,39 +6,30 @@
 // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
 
 // -------- Colors -----------
-@primary-color          : #fbfbfb;
-// @info-color             : @blue-6;
-// @success-color          : @green-6;
-// @error-color            : @red-6;
-// @highlight-color        : @red-6;
-// @warning-color          : @yellow-6;
-// @normal-color           : #d9d9d9;
-
-@body-background            : #000;
-@component-background       : #000;
+@primary-color              : rgba(0, 0, 0, 0.25);
+@primary-color-dark         : #ffffff;
 
 // -------- Typography -----------
-@font-family                : 'Lato', sans-serif;
-@heading-font-family        : @font-family;
-@heading-color              : #fff;
-@text-color                 : @primary-color;
-@text-color-secondary       : fade(@primary-color, 67%);
-@heading-color-dark         : #000;
-@text-color-dark            : #0E0E0E;
+@font-family                 : 'Lato', sans-serif;
+@heading-color-dark         : @primary-color-dark; 
+@text-color-dark            : @primary-color-dark; 
 @text-color-secondary-dark  : fade(@text-color-dark, 80%);
-@font-size-base: 14px;
+@font-size-base: 16px;
 
 // -------- Border -----------
 @border-radius-base: 0px;
 @border-radius-radio: 4px;
 @border-radius-sm: 0px;
 
+// -------- Button -----------
+@btn-primary-color-dark      : #000;  
+@btn-primary-bg-dark         : @primary-color-dark;
 
 // Shadow
-@shadow-color           : #fff;
+// @shadow-color           : #fff;
 // @box-shadow-base        : @shadow-1-down;
 // @shadow-1-up            : 0 -1px 6px @shadow-color;
-@shadow-1-down          : 0 0 6px 0px @shadow-color;
+// @shadow-1-down          : 0 0 6px 0px @shadow-color;
 // @shadow-1-left          : -1px 0 6px @shadow-color;
 // @shadow-1-right         : 1px 0 6px @shadow-color;
 // @shadow-2               : 0 2px 8px @shadow-color;
@@ -50,13 +41,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 
 // -------- Header -----------
 h1, h2, h3, h4, h5, h6 {
-  color: @heading-color;
-  font-family: @heading-font-family;
   letter-spacing: 0.2em;
-}
-
-h3{
-  font-size: 1em;
 }
 
 @media (max-width: @screen-xs-max) {
@@ -68,93 +53,109 @@ h3{
   }
 }
 
-// -------- P -----------
-p{
-  font-weight: 300;
+// -------- Anchor ---------
+a.emphasize{
+  color: #3d3d3d;
+  &:hover{
+    color: @primary-color;
+  }
 }
+
+// -------- Input Text Type ---------
+.@{ant-prefix}-input {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// -------- Dark Theme -----------
+.dark-theme{
+  h1, h2, h3, h4, h5, h6 {
+    color: @heading-color-dark;
+  }
+  p, a{
+    color: @text-color-secondary-dark;
+  }
+  // button style for dark theme
+  .@{btn-prefix-cls} { 
+    &-primary {
+      .button-variant-primary(@btn-primary-color-dark; @btn-primary-bg-dark);
+    }
+  }
+}
+
+.@{menu-prefix-cls} {
+  &-dark&-horizontal > &-item a {
+    color: @text-color-secondary-dark;
+  }
+}
+
 
 // Button
-@btn-default-bg         : transparent;
+// @btn-default-bg         : transparent;
 
-@btn-primary-color      : #000;
-@btn-primary-bg         : @primary-color;
+@btn-primary-color      : #fff;
+@btn-primary-bg         : #000;
 
-@btn-default-color      : #fff;
-@btn-default-bg         : transparent;
-@btn-default-border     : #fff;
+// @btn-default-color      : #fff;
+// @btn-default-bg         : transparent;
+// @btn-default-border     : #fff;
 
-.button-variant-primary(@color; @background) {
-  .button-color(@color; @background; @background);
-  &:hover {
-    .button-color(@background; @color; @background);
-  }
-  &:focus {
-    .button-color(@background; ~`colorPalette("@{color}", 5)`; ~`colorPalette("@{background}", 5)`);
-  }
-  &:active,
-  &.active {
-    .button-color(@background; ~`colorPalette("@{color}", 7)`; ~`colorPalette("@{background}", 7)`);
-  }
-  .button-disabled();
-}
+// .button-variant-primary(@color; @background) {
+//   .button-color(@color; @background; @background);
+//   &:hover {
+//     .button-color(@background; @color; @background);
+//   }
+//   &:focus {
+//     .button-color(@background; ~`colorPalette("@{color}", 5)`; ~`colorPalette("@{background}", 5)`);
+//   }
+//   &:active,
+//   &.active {
+//     .button-color(@background; ~`colorPalette("@{color}", 7)`; ~`colorPalette("@{background}", 7)`);
+//   }
+//   .button-disabled();
+// }
 
-.btn-default() {
-  .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border);
-  &:hover {
-    .button-color(#000; @btn-default-color; @btn-default-border);
-  }
-  &:focus,
-  &:active,
-  &.active {
-    .button-color(#000; @btn-default-color; @btn-default-border);
-  }
-}
+// .btn-default() {
+//   .button-variant-other(@btn-default-color; @btn-default-bg; @btn-default-border);
+//   &:hover {
+//     .button-color(#000; @btn-default-color; @btn-default-border);
+//   }
+//   &:focus,
+//   &:active,
+//   &.active {
+//     .button-color(#000; @btn-default-color; @btn-default-border);
+//   }
+// }
 
-// dark button style
-.btn-dark() {
-  .button-variant-other(@btn-primary-bg, @btn-primary-color, @btn-default-border);
-}
 
-.@{btn-prefix-cls} {
-  &-dark {
-    .btn-dark;
-  }
-}
 
 // Radio Button
-.@{radio-prefix-cls} {
-  .@{radio-prefix-cls}-wrapper:hover &,
-  &:hover,
-  &-focused {
-    .@{radio-inner-prefix-cls} {
-      border-color: @text-color-secondary-dark;
-    }
-  }
-  &-inner {
-    &:after {
-      background-color: @text-color-secondary-dark;
-    }
-  }
-}
+// .@{radio-prefix-cls} {
+//   .@{radio-prefix-cls}-wrapper:hover &,
+//   &:hover,
+//   &-focused {
+//     .@{radio-inner-prefix-cls} {
+//       border-color: @text-color-secondary-dark;
+//     }
+//   }
+//   &-inner {
+//     &:after {
+//       background-color: @text-color-secondary-dark;
+//     }
+//   }
+// }
 
-.@{radio-prefix-cls}-checked {
-  .@{radio-inner-prefix-cls} {
-    border-color: @text-color-secondary-dark;
-  }
-}
+// .@{radio-prefix-cls}-checked {
+//   .@{radio-inner-prefix-cls} {
+//     border-color: @text-color-secondary-dark;
+//   }
+// }
 
-.@{radio-group-prefix-cls} {
-  color: #484848;
-}
+// .@{radio-group-prefix-cls} {
+//   color: #484848;
+// }
 
-// Input
-@input-bg: fade(#fff, 10%);
-@input-color: @text-color-dark;
-@input-hover-border-color: #e7e7e7;
-
-.@{ant-prefix}-input:focus {
-  border-color: @input-hover-border-color;
-}
 
 
 
@@ -186,11 +187,9 @@ section {
     letter-spacing: 0.3em;
     font-size: 0.7em;
     line-height: 3em; 
-    color: @text-color-secondary;
   }
 
   .section-content{
-    font-size: 1.15em;
     p{
       padding-bottom: 2em;
     }
@@ -199,31 +198,9 @@ section {
 
 section.white-section{
   background-color: white;
-  color: @text-color-dark;
 
-  h1, h2, h3{
-    color: @text-color-dark;
-  }
-
-  @alert-message-color-dark: @heading-color-dark;
-  @alert-text-color-dark: @text-color-secondary-dark;
-  
-  .@{alert-prefix-cls} {
-    &-with-description{
-      color: @alert-text-color-dark;
-    }
-    &-message {
-      color: @alert-message-color-dark;
-    }
-  }
-
-  .section-title{
-    h1{
-      color: @heading-color-dark;
-    }
-  }
   .section-title-more{
-    color: @text-color-secondary-dark;
+    color: @text-color-secondary;
   }
 }
 
@@ -271,7 +248,7 @@ section.white-section{
   }
 
   p{
-    width: 80%;
+    width: 90%;
     @media (min-width: @screen-sm-min) {
       width: 70%;
     }
@@ -288,6 +265,18 @@ section.white-section{
   letter-spacing  : 0.08em;
 }
 
+// -------- Burger Menu Icon -----------
+.burger-menu-icon{
+  color: @text-color-dark;
+  font-size: 2em;
+  line-height: 63px;
+}
+
+// -------- Collapse Menu's Close Button -----------
+.close-button{
+  color: @text-color-dark;
+}
+
 // -------- Tier List -----------
 #tier-list  {
   .section-title{
@@ -299,6 +288,11 @@ section.white-section{
   .section-content{
     padding-left: 120px;
     padding-right: 120px;
+
+    @media (max-width: @screen-xs-max) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }  
 
     p{
       @media (max-width: @screen-xs-max) {
@@ -343,7 +337,6 @@ section.white-section{
   }
 
   .@{iconfont-css-prefix} {
-    color: @text-color-secondary-dark;
     font-size: 30px;
   }
 
@@ -356,6 +349,19 @@ section.white-section{
       padding-bottom: 0em;
     }
   }
+
+  h3{
+    margin: 1.5em auto 1.5em;
+  }
+
+  p:nth-child(2){
+    font-weight: 300;
+  }
+}
+
+// -------- Login -----------
+#login{
+  height: 80vh;
 }
 
 // -------- What to expect -----------
@@ -369,16 +375,22 @@ section.white-section{
     height: 200px;
   }
   p{
-    color: @text-color-secondary;
     width: 220px;
+    font-weight: 300;
     margin: 0 auto;
   }
 }
 
 // -------- Call To Action -----------
 #call-to-action-section{
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+
+  @media (max-width: @screen-xs-max) {
+    h1{
+      margin-top: 1em;
+    }
+  }
 }
 
 
@@ -589,41 +601,24 @@ div.membership-term:hover{
 
 // -------- faq -----------
 #faq{
-  padding-left: 15em;
-  padding-right: 15em;
-  font-size: 16px;
+  padding: 0 2em 2em 2em;
 
-  h2{
-    letter-spacing: .04em;
-    color: @heading-color-dark;
+  @media (min-width: @screen-lg-min) {
+    padding-left: 15em;
+    padding-right: 15em;
+  }
+
+  #detailed-how-it-work{
+    .topic{
+      padding-top: 2em;
+      padding-bottom: 1em;
+    }
   }
 
   .content{
     padding-bottom: 1em;
   }
 
-  @collapse-header-bg: @primary-color;
-  @collapse-active-bg: @primary-color;
-
-  .@{collapse-prefix-cls} {
-    .@{collapse-prefix-cls}-header {
-      color: @text-color-dark;
-      background-color: @primary-color;
-
-      .arrow {
-        color: @text-color-secondary-dark;
-      }
-    }
-
-    &-content {
-      color: @text-color-dark;
-      background-color: @primary-color;
-    }
-
-    &-borderless {
-      background-color: @primary-color;
-    }
-  }
 }
 
 // -------- Register -----------

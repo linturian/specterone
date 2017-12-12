@@ -23,7 +23,7 @@ class TierList extends Component {
 
     render() {
         return (
-            <section id="tier-list">
+            <section id="tier-list" className="dark-theme">
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Form, Input, Radio, Button } from 'antd';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import {
@@ -54,6 +54,7 @@ class Register extends Component {
 			<Row type="flex" justify="center">
 				<Col xs={22} md={6}>
 					<WrappedRegistrationForm callback={this.callback} />
+					Already a member? <Link className="emphasize" to={`/login`}>Log In</Link>
 				</Col>
 			</Row>
 		</div>
@@ -194,7 +195,7 @@ class RegistrationForm extends Component {
 						)}
 				</Form.Item>
 				<Form.Item>
-					<Button type="dark" htmlType="submit" style={{ width: '100%' }}>Sign Up</Button>
+					<Button type="primary" htmlType="submit" style={{ width: '100%' }}>Sign Up</Button>
 				</Form.Item>
 			</Form>
 		);

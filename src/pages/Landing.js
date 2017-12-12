@@ -14,7 +14,7 @@ function Landing(props) {
                 bgStyle={{
                     opacity: '.30'
                 }}>
-                <Row className="banner" type="flex" style={{
+                <Row className="banner dark-theme" type="flex" style={{
                     margin: 'auto 8vw',
                     position: 'absolute',
                     alignItems: 'center'
@@ -43,7 +43,7 @@ function Landing(props) {
                     </Col>
                 </Row>
             </Parallax>
-            <section id="what-to-expect-section">
+            <section id="what-to-expect-section" className="dark-theme">
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">
@@ -57,7 +57,7 @@ function Landing(props) {
                         <Row type="flex" justify="center" align="top">
                             <Col xs={24} sm={12} lg={6}>
                                 <img src="img/what-to-expect/access-to-watch-collection.jpg" alt="access to watch collection" />
-                                <h3>ACCESS TO WATCH COLLECTION</h3>
+                                <h3>ACCESS TO COLLECTION</h3>
                                 <p>Pick the watch you love, Unbox the experience, Switch a new timepiece for every occasion.</p>
                             </Col>
                             <Col xs={24} sm={12} lg={6}>
@@ -79,7 +79,7 @@ function Landing(props) {
                     </Col>
                 </Row>
             </section >
-            <section style={{
+            <section className="dark-theme" style={{
                 backgroundImage: 'url("img/watch-on-male-wrist-opaque.jpg")',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
@@ -170,28 +170,28 @@ function Landing(props) {
                             <Col xs={24} sm={12} lg={6} className="content-center">
                                 <div className="details">
                                     <Icon type="edit" />
-                                    <p>1. APPLY</p>
+                                    <h3>1. APPLY</h3>
                                     <p>Register account and subscribe with us</p>
                                 </div>
                             </Col>
                             <Col xs={24} sm={12} lg={6} className="content-center">
                                 <div className="details">
                                     <Icon type="select" />
-                                    <p>2. CHOOSE</p>
+                                    <h3>2. CHOOSE</h3>
                                     <p>Browse our watch collection and pick your favourites</p>
                                 </div>
                             </Col>
                             <Col xs={24} sm={12} lg={6} className="content-center">
                                 <div className="details">
                                     <Icon type="gift" />
-                                    <p>3. RECEIVE</p>
+                                    <h3>3. RECEIVE</h3>
                                     <p>Watches will be delivered to you every subscription cycle</p>
                                 </div>
                             </Col>
                             <Col xs={24} sm={12} lg={6} className="content-center">
                                 <div className="details">
                                     <Icon type="rollback" />
-                                    <p>4. RETURN</p>
+                                    <h3>4. RETURN</h3>
                                     <p>Simply return watches and head to watch collection to select new watches</p>
                                 </div>
                             </Col>
@@ -199,7 +199,7 @@ function Landing(props) {
                     </Col>
                 </Row>
             </section>
-            <section id="call-to-action-section">
+            <section id="call-to-action-section" className="dark-theme">
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">

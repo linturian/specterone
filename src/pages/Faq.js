@@ -13,7 +13,7 @@ function Faq(props) {
     return (
         <section className="white-section" id="faq">
             <Row id="detailed-how-it-work">
-                <Col className="topic" xs={24} style={{ textAlign: 'left' }}>
+                <Col xs={24} className="topic" >
                     <h2>How It Works?</h2>
                     <p>Your luxury watch collection</p>
                     <p>Get access to an unparalleled range of luxury watches</p>

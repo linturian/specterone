@@ -11,7 +11,7 @@ function TierCollection(props) {
    });
 
     return (
-        <div className="tier-collection">
+        <div className="tier-collection dark-theme">
             <Row>
                 {watchItems}
             </Row>

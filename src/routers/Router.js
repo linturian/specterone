@@ -6,15 +6,16 @@ import Register from '../pages/Register';
 import Faq from '../pages/Faq';
 import Login from '../pages/Login';
 import Profile from '../pages/Profile';
+import AppliedRoute from "./AppliedRoute";
 
-const Router = () => (
+const Router = ({childProps}) => (
     <Switch>
-      <Route exact path='/' component={Landing}/>
+      <AppliedRoute exact path='/' component={Landing} props={childProps}/>
       <Route exact path='/faq' component={Faq}/>      
       <Route exact path='/collection' component= {Collection} />
       <Route exact path='/register' component={Register}/>
-      <Route exact path='/login' component={Login}/>
-      <Route exact path='/profile' component={Profile}/>
+      <AppliedRoute exact path='/login' component={Login} props={childProps}/>
+      <AppliedRoute exact path='/profile' component={Profile} props={childProps}/>
     </Switch>
 )
 
