@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Layout, Menu, Icon, Row, Col, Button } from 'antd';
 import scrollToElement from 'scroll-to-element';
 import { Link } from 'react-router-dom';
+import Router from './routers/Router';
 import { slide as SlideMenu } from 'react-burger-menu';
 const { Header, Footer, Sider, Content } = Layout;
 
 
-class MainLayout extends Component {
+class App extends Component {
 
     constructor(props) {
         super(props);
@@ -16,6 +17,7 @@ class MainLayout extends Component {
     }
 
     toggleMenu = () => {
+        console.log("toggling menu");
         if (this.state.isMenuCollapsed) {
             this.setState({
                 isMenuCollapsed: false
@@ -28,6 +30,7 @@ class MainLayout extends Component {
     }
 
     menuClickHandler = (e) => {
+        this.toggleMenu();
         if (e.key) {
             if (e.key == 'tier-list' || e.key == 'contact') {
                 scrollToElement('#' + e.key);
@@ -46,7 +49,6 @@ class MainLayout extends Component {
                         <Col lg={18} >
                             <Menu mode="horizontal" onClick={this.menuClickHandler}>
                                 <Menu.Item key="collection"><Link to={`/collection`}>COLLECTION</Link></Menu.Item>
-                                {/* <Menu.Item key="tier-list"><Link to={`/`}>PRICING</Link></Menu.Item> */}
                                 <Menu.Item key="faq"><Link to={`/faq`}>HOW IT WORKS</Link></Menu.Item>
                                 <Menu.Item key="contact">CONTACT</Menu.Item>
                                 <Menu.Item key="apply">
@@ -95,10 +97,9 @@ class MainLayout extends Component {
                             </Menu.Item>
                         </Menu>
                     </div>
-
                 </Header>
                 <Content>
-                    {this.props.children}
+                    <Router />
                 </Content>
                 <Footer id="contact">
                     <Row type="flex" justify="space-between">
@@ -115,4 +116,4 @@ class MainLayout extends Component {
     }
 }
 
-export default MainLayout;
+export default App;

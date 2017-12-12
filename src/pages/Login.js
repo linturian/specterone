@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { MainLayout } from '../layouts';
 import { Row, Col, Form, Input, Radio, Button } from 'antd';
 import { Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
@@ -31,9 +30,9 @@ class Login extends Component {
         const WrappedLoginForm = Form.create()(LoginForm);
 
         return (
-            <MainLayout>
-                <section className="white-section" id="login">
-                    {/* <Row type="flex" justify="center">
+
+            <section className="white-section" id="login">
+                {/* <Row type="flex" justify="center">
                         <Col xs={22} md={6}>
                             <FacebookLogin
                                 cssClass="ant-btn sign-up-facebook"
@@ -41,7 +40,7 @@ class Login extends Component {
                             />
                         </Col>
                     </Row> */}
-                    {/* <Row type="flex" justify="center">
+                {/* <Row type="flex" justify="center">
                         <Col xs={12} md={6}>
                             <GoogleLogin
                                 className="ant-btn sign-up-google"
@@ -49,18 +48,17 @@ class Login extends Component {
                             />
                         </Col>
                     </Row> */}
-                    {/* <Row type="flex" justify="center">
+                {/* <Row type="flex" justify="center">
                         <Col xs={22} md={6} style={{ marginBottom: '24px', marginTop: '12px' }}>
                             <p className="hr-text">OR</p>
                         </Col>
                     </Row> */}
-                    <Row type="flex" justify="center">
-                        <Col xs={22} md={6}>
-                            <WrappedLoginForm callback={this.callback} />
-                        </Col>
-                    </Row>
-                </section>
-            </MainLayout>
+                <Row type="flex" justify="center">
+                    <Col xs={22} md={6}>
+                        <WrappedLoginForm callback={this.callback} />
+                    </Col>
+                </Row>
+            </section>
         );
     }
 }
@@ -92,10 +90,10 @@ class LoginForm extends Component {
             user.authenticateUser(authenticationDetails, {
                 onSuccess: result => resolve(),
                 onFailure: err => {
-                    if(err.code == "UserNotConfirmedException"){
+                    if (err.code == "UserNotConfirmedException") {
                         alert("Please check your email");
                     }
-                    if(err.code == "UserNotFoundException"){
+                    if (err.code == "UserNotFoundException") {
                         alert("Invalid email or password");
                     }
                     reject(err)

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { MainLayout } from '../layouts';
 import { Row, Col, Form, Input, Radio, Button } from 'antd';
 import { Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
@@ -8,7 +7,7 @@ import {
 	AuthenticationDetails,
 	CognitoUserPool,
 	CognitoUserAttribute,
-	CognitoIdentityServiceProvider 
+	CognitoIdentityServiceProvider
 } from "amazon-cognito-identity-js";
 import config from "../config";
 
@@ -64,18 +63,16 @@ class Register extends Component {
 			</Col>
 		</Row>
 		return (
-			<MainLayout>
-				<section className="white-section" id="register">
-					<Row type="flex" justify="center">
-						<Col xs={12} style={{ marginBottom: '42px' }} >
-							<center>
-								<h1>JOIN THE WAITLIST</h1>
-							</center>
-						</Col>
-					</Row>
-					{this.state.user == null ? registerContainer : confirmContainer}
-				</section>
-			</MainLayout>
+			<section className="white-section" id="register">
+				<Row type="flex" justify="center">
+					<Col xs={12} style={{ marginBottom: '42px' }} >
+						<center>
+							<h1>JOIN THE WAITLIST</h1>
+						</center>
+					</Col>
+				</Row>
+				{this.state.user == null ? registerContainer : confirmContainer}
+			</section>
 		);
 	}
 }

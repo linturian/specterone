@@ -1,5 +1,4 @@
 import React from 'react';
-import { MainLayout } from '../layouts';
 import TierList from '../components/TierList';
 import { Parallax } from 'react-parallax';
 import { Col, Row, Button, Icon } from 'antd';
@@ -8,7 +7,7 @@ import { Col, Row, Button, Icon } from 'antd';
 function Landing(props) {
 
     return (
-        <MainLayout>
+        <div>
             <Parallax className="banner"
                 strength={400}
                 bgImage='img/watch-on-male-wrist-subtle.jpg'
@@ -228,7 +227,7 @@ function Landing(props) {
                     </Col>
                 </Row>
             </section >
-        </MainLayout >
+        </div >
     )
 }
 

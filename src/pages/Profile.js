@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { MainLayout } from '../layouts';
 import { Row, Col, Form, Input, Radio, Button, Alert } from 'antd';
 import { Redirect } from 'react-router-dom';
 import {
@@ -29,67 +28,64 @@ class Profile extends Component {
     render() {
 
         return (
-
-            <MainLayout>
-                <section className="white-section" id="profile">
-                    <Row type="flex" justify="center">
-                        <Col xs={22} style={{ marginBottom: '42px' }} >
-                            <center>
-                                <h1>ACCOUNT & SETTING</h1>
-                            </center>
+            <section className="white-section" id="profile">
+                <Row type="flex" justify="center">
+                    <Col xs={22} style={{ marginBottom: '42px' }} >
+                        <center>
+                            <h1>ACCOUNT & SETTING</h1>
+                        </center>
+                    </Col>
+                </Row>
+                <Row type="flex" justify="center">
+                    <Col xs={18} md={12} style={{ marginBottom: '2em' }}>
+                        <Alert
+                            message="Documents required"
+                            description={<WarningMessage />}
+                            type="warning"
+                            showIcon
+                        />
+                    </Col>
+                </Row>
+                <Row type="flex" justify="center" className="info-container">
+                    <Col xs={18} md={12}>
+                        <span className="section-title">Account Information</span>
+                        <Col xs={24} className="details">
+                            <span><b>Status</b></span>
+                            <p>Pending identity verification</p>
                         </Col>
-                    </Row>
-                    <Row type="flex" justify="center">
-                        <Col xs={18} md={12} style={{ marginBottom: '2em' }}>
-                            <Alert
-                                message="Documents required"
-                                description={<WarningMessage />}
-                                type="warning"
-                                showIcon
-                            />
+                        <Col xs={12} className="details">
+                            <span><b>Email</b></span>
+                            <p>test@test.com</p>
                         </Col>
-                    </Row>
-                    <Row type="flex" justify="center" className="info-container">
-                        <Col xs={18} md={12}>
-                            <span className="section-title">Account Information</span>
-                            <Col xs={24} className="details">
-                                <span><b>Status</b></span>
-                                <p>Pending identity verification</p>
-                            </Col>
-                            <Col xs={12} className="details">
-                                <span><b>Email</b></span>
-                                <p>test@test.com</p>
-                            </Col>
-                            <Col xs={12} className="details">
-                                <span><b>Password</b></span>
-                                <p>********</p>
-                            </Col>
+                        <Col xs={12} className="details">
+                            <span><b>Password</b></span>
+                            <p>********</p>
                         </Col>
-                    </Row>
-                    <Row type="flex" justify="center" className="info-container" style={{}}>
-                        <Col xs={18} md={12}>
-                            <span className="section-title">Personal Information</span>
-                            <Col xs={12} className="details">
-                                <span><b>Given Name</b></span>
-                                <p>Lin</p>
-                            </Col>
-                            <Col xs={12} className="details">
-                                <span><b>Family Name</b></span>
-                                <p>Ananphumtriphop</p>
-                            </Col>
-                            <Col xs={12} className="details">
-                                <span><b>Gender</b></span>
-                                <p>Female</p>
-                            </Col>
-                            {/* <Col xs={12} className="details">
+                    </Col>
+                </Row>
+                <Row type="flex" justify="center" className="info-container" style={{}}>
+                    <Col xs={18} md={12}>
+                        <span className="section-title">Personal Information</span>
+                        <Col xs={12} className="details">
+                            <span><b>Given Name</b></span>
+                            <p>Lin</p>
+                        </Col>
+                        <Col xs={12} className="details">
+                            <span><b>Family Name</b></span>
+                            <p>Ananphumtriphop</p>
+                        </Col>
+                        <Col xs={12} className="details">
+                            <span><b>Gender</b></span>
+                            <p>Female</p>
+                        </Col>
+                        {/* <Col xs={12} className="details">
                                 <span><b>Phone</b></span>
                                 <p>+65 96156660</p>
                             </Col> */}
-                        </Col>
-                    </Row>
+                    </Col>
+                </Row>
 
-                </section>
-            </MainLayout>
+            </section>
         );
     }
 }
@@ -98,7 +94,7 @@ function WarningMessage(props) {
     return (
         <div>
             To comfirm your identity, please email the following documents to concierge@specterone.com<br />
-            <ul style={{marginTop: '0.5em', marginLeft: '1em'}}>
+            <ul style={{ marginTop: '0.5em', marginLeft: '1em' }}>
                 <li>- ID document (Front and Back)</li>
                 <li>- Bank statement with address, not more than 3 months old</li>
             </ul>
