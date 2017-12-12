@@ -1,22 +1,20 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Register, MembershipTerm, Tier}  from '../components/registration';
 import Collection from '../pages/Collection';
-// import Reserve from '../components/collection/Reserve';
-import ComingSoon from '../pages/ComingSoon';
 import Landing from '../pages/Landing';
+import Register from '../pages/Register';
 import Faq from '../pages/Faq';
+import Login from '../pages/Login';
+import Profile from '../pages/Profile';
 
 const Router = () => (
     <Switch>
       <Route exact path='/' component={Landing}/>
-      {/* <Route exact path='/signup' component={BetaSignup}/>      */}
       <Route exact path='/faq' component={Faq}/>      
-      <Route exact path='/register' component={Register}/>
-      <Route exact path='/register/membership-term' component={MembershipTerm}/>
-      <Route path='/register/membership-term/:number' component={Tier}/>
       <Route exact path='/collection' component= {Collection} />
-      {/* <Route exact path='/collection/reserve' component= {Reserve} /> */}
+      <Route exact path='/register' component={Register}/>
+      <Route exact path='/login' component={Login}/>
+      <Route exact path='/profile' component={Profile}/>
     </Switch>
 )
 

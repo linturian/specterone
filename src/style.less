@@ -110,31 +110,52 @@ p{
   }
 }
 
+// dark button style
+.btn-dark() {
+  .button-variant-other(@btn-primary-bg, @btn-primary-color, @btn-default-border);
+}
+
+.@{btn-prefix-cls} {
+  &-dark {
+    .btn-dark;
+  }
+}
+
 // Radio Button
 .@{radio-prefix-cls} {
   .@{radio-prefix-cls}-wrapper:hover &,
   &:hover,
   &-focused {
     .@{radio-inner-prefix-cls} {
-      border-color: @border-color-base;
+      border-color: @text-color-secondary-dark;
     }
   }
   &-inner {
     &:after {
-      background-color: @border-color-base;
-      border-radius: @border-radius-radio;
+      background-color: @text-color-secondary-dark;
     }
   }
 }
 
 .@{radio-prefix-cls}-checked {
   .@{radio-inner-prefix-cls} {
-    border-color: @border-color-base;
+    border-color: @text-color-secondary-dark;
   }
+}
+
+.@{radio-group-prefix-cls} {
+  color: #484848;
 }
 
 // Input
 @input-bg: fade(#fff, 10%);
+@input-color: @text-color-dark;
+@input-hover-border-color: #e7e7e7;
+
+.@{ant-prefix}-input:focus {
+  border-color: @input-hover-border-color;
+}
+
 
 
 
@@ -179,6 +200,23 @@ section {
 section.white-section{
   background-color: white;
   color: @text-color-dark;
+
+  h1, h2, h3{
+    color: @text-color-dark;
+  }
+
+  @alert-message-color-dark: @heading-color-dark;
+  @alert-text-color-dark: @text-color-secondary-dark;
+  
+  .@{alert-prefix-cls} {
+    &-with-description{
+      color: @alert-text-color-dark;
+    }
+    &-message {
+      color: @alert-message-color-dark;
+    }
+  }
+
   .section-title{
     h1{
       color: @heading-color-dark;
@@ -186,10 +224,8 @@ section.white-section{
   }
   .section-title-more{
     color: @text-color-secondary-dark;
-    
   }
 }
-
 
 
 
@@ -263,7 +299,7 @@ section.white-section{
   .section-content{
     padding-left: 120px;
     padding-right: 120px;
-    
+
     p{
       @media (max-width: @screen-xs-max) {
         padding-bottom: 0em;
@@ -551,6 +587,7 @@ div.membership-term:hover{
   }
 }
 
+// -------- faq -----------
 #faq{
   padding-left: 15em;
   padding-right: 15em;
@@ -587,7 +624,33 @@ div.membership-term:hover{
       background-color: @primary-color;
     }
   }
-  
-
-  
 }
+
+// -------- Register -----------
+#register{
+  padding: 80px 0;
+}
+
+// -------- Profile -----------
+#profile{
+  padding: 80px 0;
+  .info-container > div{
+    background-color: #fafafa;
+    padding: 1.5em 1.5em 0.5em 1.5em;
+
+    .section-title{
+      font-weight: 600;
+      font-size: 1.25em;
+      display: block;
+      text-align: left;
+      padding-bottom: 0.3em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid #bbbbbb;
+    }
+
+    .details{
+      margin-bottom: 1em;
+    }
+  }
+}
+
