@@ -17,6 +17,10 @@ class Login extends Component {
         this.props.history.push("/profile");
     }
 
+    responseFacebook = (response) => {
+        console.log(response);
+    }
+
     render() {
         const WrappedLoginForm = Form.create()(LoginForm);
 
@@ -24,20 +28,24 @@ class Login extends Component {
 
             <section className="white-section" id="login">
                 <Row type="flex" justify="center">
-					<Col xs={12} style={{ marginBottom: '42px' }} >
-						<center>
-							<h1>LOG IN</h1>
-						</center>
-					</Col>
-				</Row>
+                    <Col xs={12} style={{ marginBottom: '42px' }} >
+                        <center>
+                            <h1>LOG IN</h1>
+                        </center>
+                    </Col>
+                </Row>
                 {/* <Row type="flex" justify="center">
-                        <Col xs={22} md={6}>
-                            <FacebookLogin
-                                cssClass="ant-btn sign-up-facebook"
-                                textButton="Log in with Facebook"
-                            />
-                        </Col>
-                    </Row> */}
+                    <Col xs={22} md={6}>
+                        <FacebookLogin
+                            appId="325383964609164"
+                            cssClass="ant-btn sign-up-facebook"
+                            textButton="Log in with Facebook"
+                            fields="name,email,picture,gender"
+                            scope="public_profile, email, gender"
+                            callback={this.responseFacebook}
+                        />
+                    </Col>
+                </Row> */}
                 {/* <Row type="flex" justify="center">
                         <Col xs={12} md={6}>
                             <GoogleLogin

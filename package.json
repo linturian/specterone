@@ -4,8 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "amazon-cognito-auth-js": "^1.1.0",
     "amazon-cognito-identity-js": "^1.28.0",
     "antd": "^2.11.2",
+    "aws-sdk": "^2.169.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-facebook-login": "^3.6.2",

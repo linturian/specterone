@@ -45,13 +45,7 @@ class App extends Component {
         }
     }
 
-    menuClickHandler = (e) => {
-        if (e.key) {
-            if (e.key === 'tier-list' || e.key === 'contact') {
-                scrollToElement('#' + e.key);
-            }
-        }
-    }
+    menuClickHandler = (e) => { }
 
     collapsedMenuClickHandler = (e) => {
         this.toggleMenu();
@@ -127,7 +121,7 @@ function MainMenu(props) {
         <Menu mode={props.mode} theme="dark" onClick={props.clickHandler}>
             <Menu.Item key="collection"><Link to={`/collection`}>COLLECTION</Link></Menu.Item>
             <Menu.Item key="faq"><Link to={`/faq`}>HOW IT WORKS</Link></Menu.Item>
-            <Menu.Item key="contact">CONTACT</Menu.Item>
+            <Menu.Item key="contact"><Link to={`/consignment`}>CONSIGNMENT</Link></Menu.Item>
             <Menu.Item key="login"><Link to={`/login`}>LOGIN</Link></Menu.Item>
             <Menu.Item key="apply">
                 <form action="/register" method="get" >

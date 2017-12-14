@@ -11,6 +11,8 @@ import {
 } from "amazon-cognito-identity-js";
 import config from "../config";
 
+const AWS = require('aws-sdk');
+
 class Register extends Component {
 
 	constructor(props) {
@@ -27,14 +29,83 @@ class Register extends Component {
 		console.log("called back", this.state)
 	}
 
+	// facebookSignup = (response) => {
+	// 	console.log(response)
+	// 	// Check if the user logged in successfully.
+	// 	if (response) {
+
+	// 		console.log("Add the Facebook access token to the Cognito credentials login map.")
+	// 		// Add the Facebook access token to the Cognito credentials login map.
+	// 		AWS.config.region = config.cognito.REGION;
+
+
+	// 		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+	// 			IdentityPoolId: config.cognito.IDENTITY_POOL_ID,
+	// 			Logins: {
+	// 				'graph.facebook.com': response.accessToken
+	// 			}
+	// 		});
+
+	// 		// Obtain AWS credentials
+	// 		AWS.config.credentials.get(function (error) {
+	// 			// Access AWS resources here.
+	// 			console.log(error)
+
+				// const userPool = new CognitoUserPool({
+				// 	UserPoolId: config.cognito.USER_POOL_ID,
+				// 	ClientId: config.cognito.APP_CLIENT_ID
+				// });
+
+				// const attributeList = []
+
+				// const attributeFirstname = new CognitoUserAttribute({
+				// 	Name: 'given_name',
+				// 	Value: response.first_name
+				// });
+				// const attributeLastname = new CognitoUserAttribute({
+				// 	Name: 'family_name',
+				// 	Value: response.last_name
+				// });
+				// const attributeGender = new CognitoUserAttribute({
+				// 	Name: 'gender',
+				// 	Value: response.gender
+				// });
+
+				// attributeList.push(attributeFirstname);
+				// attributeList.push(attributeLastname);
+				// attributeList.push(attributeGender);
+
+				// new Promise((resolve, reject) => {
+				// 	userPool.signUp(response.email, response.password, attributeList, null, (err, result) => {
+				// 		if (err) {
+				// 			console.log('Sign up error', err);
+				// 			reject(err);
+				// 			return;
+				// 		}
+				// 		resolve(result.user);
+				// 	});
+				// });
+	// 		});
+
+	// 		// this.props.history.push("/profile");
+
+	// 	} else {
+	// 		console.log('There was a problem logging you in.');
+	// 	}
+	// }
+
 	render() {
 		const WrappedRegistrationForm = Form.create()(RegistrationForm);
 		const registerContainer = <div>
 			{/* <Row type="flex" justify="center">
 				<Col xs={12} md={6}>
 					<FacebookLogin
+						appId="1383863448403397"
 						cssClass="ant-btn sign-up-facebook"
 						textButton="Sign up with Facebook"
+						fields="first_name,email,gender,last_name, verified"
+						scope="public_profile, email, gender, first_name, last_name, verified"
+						callback={this.facebookSignup}
 					/>
 				</Col>
 			</Row> */}
