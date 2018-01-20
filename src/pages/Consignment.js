@@ -1,22 +1,28 @@
 import React from 'react';
-import { Col, Row, Collapse } from 'antd';
+import { Col, Row, Collapse, Button } from 'antd';
+import { Link } from "react-router-dom";
 const Panel = Collapse.Panel;
 
 function Consignment(props) {
-
     return (
         <section className="white-section" id="faq">
             <Row id="detailed-how-it-work">
                 <Col xs={24} className="topic" >
                     <h2>WATCH & EARN</h2>
-                    <p>1. Consign timepieces from your personal collection in exchange for a monthly cash return using the Specter One platform.</p>
+                    <h3>Monetize your most valuable asset - Time</h3>
+                    <p>Consign your luxury timepieces and receive cash monthly in our hassle-free fully insured consignment programme</p>
+                    <form style={{ margin: '2em 0 0 0' }} method="get" action="http://specter-one-web.s3-website-us-east-1.amazonaws.com/consignors.html">
+                        <Button type="primary" htmlType="submit" style={{ padding: '0em 4em', height: '2.5em' }}>SIGN UP NOW</Button>
+                    </form>
+                    {/* <p>1. Consign timepieces from your personal collection in exchange for a monthly cash return using the Specter One platform.</p>
                     <p>2. Timepieces entered into our collections are appraised, insured, and maintained by our in-house experts, and concierge team.</p>
                     <p>3. The timepieces will be part of our Specter One collection under the Consignment Program until the timepiece is returned. If required, Specter One may aid the sale of timepieces or assist members to purchase specific timepieces directly.</p>
+                         */}
                 </Col>
-                <Col className="content" xs={24} style={{marginTop: '2em' }}>
+                <Col className="content" xs={24} style={{ marginTop: '2em' }}>
                     <h2>How Does It Work?</h2>
                     <p><b>Step 1: Describe The Watch</b><br />
-                        Contact us via email sean@specterone.com or via mobile +65 9818 5995 and provide with us the details of the timepieces (e.g. Brand, Model, Year/Reference No.)
+                        Sign up via <a href="http://specter-one-web.s3-website-us-east-1.amazonaws.com/consignors.html">this link</a> or contact us via email sean@specterone.com or via mobile +65 9818 5995 and provide with us the details of the timepieces (e.g. Brand, Model, Year/Reference No.)
                     </p>
                 </Col>
                 <Col className="content" xs={24}>
@@ -70,25 +76,32 @@ function Consignment(props) {
                         </Panel>
                         <Panel header="Does Specter One offers to repair consigned watches?" key="5">
                             <p>
-                            With your consent, Specter One will inform you of any minor or major repairs required, be it cosmetic or mechanical. Such costs will be factored into the final agreed-upon monthly offer. However, it is important to note that no repairs will be done without your approval. At no time will we open your watch without your consent.
+                                With your consent, Specter One will inform you of any minor or major repairs required, be it cosmetic or mechanical. Such costs will be factored into the final agreed-upon monthly offer. However, it is important to note that no repairs will be done without your approval. At no time will we open your watch without your consent.
                             </p>
                         </Panel>
                         <Panel header="Is there a minimum loan in period?" key="6">
                             <p>
-                            Yes. To ensure it is worth your time and ours to do so, we expect a loan-in period of at least 3 months. However, the team is flexible and open to discussion. 
+                                Yes. To ensure it is worth your time and ours to do so, we expect a loan-in period of at least 3 months. However, the team is flexible and open to discussion.
                             </p>
                         </Panel>
                         <Panel header="How would I get paid?" key="7">
                             <p>
-                            For each time period that the watch is actively consigned in the Specter One collection, we will pay the owner the agreed upon amount via bank transfer or mail a cheque. 
+                                For each time period that the watch is actively consigned in the Specter One collection, we will pay the owner the agreed upon amount via bank transfer or mail a cheque.
                             </p>
                         </Panel>
                         <Panel header="What if my watch is lost, stolen or damaged?" key="8">
                             <p>
-                            All of the watches in the Specter One collection, including consigned watches, are insured. In the unlikely event that your watch is lost or stolen, Specter One will refund you the full appraised value originally quoted in your accepted consignment agreement. We will also ensure that watches will be maintained and free of damages before returning them to you.
+                                All of the watches in the Specter One collection, including consigned watches, are insured. In the unlikely event that your watch is lost or stolen, Specter One will refund you the full appraised value originally quoted in your accepted consignment agreement. We will also ensure that watches will be maintained and free of damages before returning them to you.
                             </p>
                         </Panel>
                     </Collapse>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={24}>
+                    <form style={{ margin: '2em 0' }} method="get" action="http://specter-one-web.s3-website-us-east-1.amazonaws.com/consignors.html">
+                        <Button type="primary" htmlType="submit" style={{ padding: '0em 4em', height: '2.5em' }}>SIGN UP NOW</Button>
+                    </form>
                 </Col>
             </Row>
         </section >

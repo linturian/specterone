@@ -30,6 +30,8 @@ class TierList extends Component {
                             ENJOY WATCHES THROUGH
                         </p>
                         <h1>MONTHLY <span>SUBSCRIPTION</span></h1>
+                        <br/>
+                        <h1>$247/month</h1><p>($7.96/day)</p>
                     </Col>
                 </Row>
                 <Row className="section-content" type="flex" justify="center">

@@ -94,12 +94,19 @@ class App extends Component {
                     <Router childProps={childProps} />
                 </Content>
                 <Footer id="contact" className="dark-theme">
-                    <Row type="flex" justify="space-between">
-                        <Col xs={24} md={12}>
+                    <Row type="flex">
+                        <Col xs={24} md={6}>
                             <p>CONTACT OUR CONCIERGE</p>
                             <p style={{ marginRight: '2em' }}><Icon type="mail" /> concierge@specterone.com</p>
+                           </Col>
+                        <Col xs={24} md={6}>
+                            <p>CONNECT WITH US</p>
                             <a href="https://www.facebook.com/SpecterOneWatches/"><i className="fa fa-facebook-official" aria-hidden="true" style={{ color: 'white' }}></i></a>
                             <a href="https://www.instagram.com/specteronewatches/"><i className="fa fa-instagram" aria-hidden="true" style={{ marginLeft: '1em', color: 'white' }}></i></a>
+                        </Col>
+                        <Col xs={24} >
+                            <br/>
+                            <p>© 2017 Specter One | <Link to={`/privacy-policy`}>Privacy Policy</Link></p>
                         </Col>
                     </Row>
                 </Footer>
@@ -121,7 +128,7 @@ function MainMenu(props) {
         <Menu mode={props.mode} theme="dark" onClick={props.clickHandler}>
             <Menu.Item key="collection"><Link to={`/collection`}>COLLECTION</Link></Menu.Item>
             <Menu.Item key="faq"><Link to={`/faq`}>HOW IT WORKS</Link></Menu.Item>
-            <Menu.Item key="contact"><Link to={`/consignment`}>CONSIGNMENT</Link></Menu.Item>
+            {/* <Menu.Item key="contact"><Link to={`/consignment`}>CONSIGNMENT</Link></Menu.Item> */}
             <Menu.Item key="login"><Link to={`/login`}>LOGIN</Link></Menu.Item>
             <Menu.Item key="apply">
                 <form action="/register" method="get" >
