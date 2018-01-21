@@ -17,6 +17,10 @@ class App extends Component {
             isAuthenticating: true,
             currentUser: null
         }
+        //Intercomm initialize
+        window.Intercom("boot", {
+            app_id: "tyhfvrmy"
+        });
     }
 
     async componentDidMount() {
@@ -61,6 +65,8 @@ class App extends Component {
 
 
     render() {
+        window.Intercom("update");
+        
         const childProps = {
             isAuthenticated: this.state.isAuthenticated,
             username: this.state.username,
@@ -77,7 +83,7 @@ class App extends Component {
                             <Link to={`/`}><img className="logo" src="/img/specter-one-logo.jpg" alt="Specter One logo" /></Link>
                         </Col>
                         <Col lg={18} >
-                            {this.state.isAuthenticated ? <AuthenticatedMenu clickHandler={this.logoutHandler}/> : <MainMenu clickHander={this.menuClickHandler} mode="horizontal" />}
+                            {this.state.isAuthenticated ? <AuthenticatedMenu clickHandler={this.logoutHandler} /> : <MainMenu clickHander={this.menuClickHandler} mode="horizontal" />}
                         </Col>
                         <Col xs={2}>
                             {this.state.isMenuCollapsed && <Icon type="bars" className="burger-menu-icon" onClick={this.toggleMenu} />}
@@ -98,14 +104,14 @@ class App extends Component {
                         <Col xs={24} md={6}>
                             <p>CONTACT OUR CONCIERGE</p>
                             <p style={{ marginRight: '2em' }}><Icon type="mail" /> concierge@specterone.com</p>
-                           </Col>
+                        </Col>
                         <Col xs={24} md={6}>
                             <p>CONNECT WITH US</p>
                             <a href="https://www.facebook.com/SpecterOneWatches/"><i className="fa fa-facebook-official" aria-hidden="true" style={{ color: 'white' }}></i></a>
                             <a href="https://www.instagram.com/specteronewatches/"><i className="fa fa-instagram" aria-hidden="true" style={{ marginLeft: '1em', color: 'white' }}></i></a>
                         </Col>
                         <Col xs={24} >
-                            <br/>
+                            <br />
                             <p>© 2017 Specter One | <Link to={`/privacy-policy`}>Privacy Policy</Link></p>
                         </Col>
                     </Row>

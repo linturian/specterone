@@ -23,7 +23,7 @@ function Landing(props) {
                         <h1 style={{ fontWeight: '900' }}>WELCOME TO SPECTER ONE</h1>
                         <br />
                         <p className="banner-tag-line">
-                            Gain access to your own private watch collection
+                            Access to a full collection of watches for $247/month
                         </p>
                         <form action="/register" method="get" >
                             <Button

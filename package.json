@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "amazon-cognito-auth-js": "^1.1.0",
+    "amazon-cognito-auth-js": "^1.1.1",
     "amazon-cognito-identity-js": "^1.28.0",
     "antd": "^2.11.2",
     "aws-sdk": "^2.169.0",
@@ -22,7 +22,7 @@
     "react-scripts": "1.0.7"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "lessc --clean-css src/style.less src/style.min.css && react-scripts start",
     "build": "lessc --clean-css src/style.less src/style.min.css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
