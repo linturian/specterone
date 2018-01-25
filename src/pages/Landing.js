@@ -156,7 +156,7 @@ function Landing(props) {
                 </Row>
             </section >
             <TierList />
-            <section id="what-to-expect-section" className="dark-theme">
+            <section id="what-to-expect-section" className="white-section">
                 <Row>
                     <Col className="section-title" xs={24}>
                         <p className="section-title-more">

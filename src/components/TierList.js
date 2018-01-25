@@ -3,23 +3,6 @@ import { Card, Col, Row, Button } from 'antd';
 import { withRouter } from 'react-router-dom';
 
 class TierList extends Component {
-    constructor(props) {
-        super(props);
-
-        const enthusiastLink = 'img/collection/enthusiast/';
-        this.enthusiasts = [enthusiastLink + 'enthusiast-tagheur.jpg', enthusiastLink + 'enthusiast-tudor.jpg'];
-
-        const africionadoLink = 'img/collection/africionado/';
-        this.africionados = [africionadoLink + 'africionado-iwc.jpg', africionadoLink + 'africionado-paneri.jpg', africionadoLink + 'africionado-rolex.jpg'];
-
-        const connoisseurLink = 'img/collection/connoisseur/';
-        this.connoisseurs = [connoisseurLink + 'connoisseur-ap.jpg', connoisseurLink + 'connoisseur-hublot.jpg', connoisseurLink + 'connoisseur-vacheron-constatin.jpg'];
-
-    }
-
-    clickHandler = () => {
-
-    }
 
     render() {
         return (
@@ -30,23 +13,23 @@ class TierList extends Component {
                             ENJOY WATCHES THROUGH
                         </p>
                         <h1>MONTHLY <span>SUBSCRIPTION</span></h1>
-                        <br/>
+                        <br />
                         <h1>$247/month</h1><p>($7.96/day)</p>
                     </Col>
                 </Row>
                 <Row className="section-content" type="flex" justify="center">
-                    
-    
-                    {this.enthusiasts.map(imgSrc => {
-                        return <WatchItem imgSrc={imgSrc} />;
-                    })}
-                    {this.africionados.map(imgSrc => {
-                        return <WatchItem imgSrc={imgSrc} />;
-                    })}
-                    {this.connoisseurs.map(imgSrc => {
-                        return <WatchItem imgSrc={imgSrc} />;
-                    })}
-                   
+                    {/* <WatchItem imgSrc="img/collection/aquaracer-300m-43mm.png" /> */}
+                    <WatchItem imgSrc="img/collection/bell-ross.png" />
+                    <WatchItem imgSrc="img/collection/iwc-b.png" />
+                    <WatchItem imgSrc="img/collection/iwc-w.png" />
+                    <WatchItem imgSrc="img/collection/omega-soldier.png" />
+                    <WatchItem imgSrc="img/collection/radiomir-panerai-l.png" />
+                    <WatchItem imgSrc="img/collection/radiomir-panerai.png" />
+                    <WatchItem imgSrc="img/collection/tag-heuer-formula-1.png" />
+                    <WatchItem imgSrc="img/collection/tudor-genve-b.png" />
+                    {/* <WatchItem imgSrc="img/collection/tudor-genve-g.png" /> */}
+
+
                 </Row>
                 {/* <Row id="view-all-models">
                     <ViewCollectionBtn />
