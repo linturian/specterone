@@ -112,7 +112,7 @@ class App extends Component {
                         </Col>
                         <Col xs={24} >
                             <br />
-                            <p>© 2017 Specter One | <Link to={`/privacy-policy`}>Privacy Policy</Link></p>
+                            <p>© 2017 Specter One | <Link to={`terms-of-use`}>Terms of Use</Link> | <Link to={`/privacy-policy`}>Privacy Policy</Link></p>
                         </Col>
                     </Row>
                 </Footer>

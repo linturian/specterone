@@ -8,6 +8,7 @@ import Login from '../pages/Login';
 import Profile from '../pages/Profile';
 import Consignment from '../pages/Consignment';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
+import TermOfUse from '../pages/TermOfUse';
 import AppliedRoute from "./AppliedRoute";
 
 const Router = ({childProps}) => (
@@ -17,6 +18,7 @@ const Router = ({childProps}) => (
       <Route exact path='/consignment' component={Consignment}/>      
       <Route exact path='/collection' component= {Collection} />
       <Route exact path='/privacy-policy' component= {PrivacyPolicy} />
+      <Route exact path='/terms-of-use' component= {TermOfUse} />
       <Route exact path='/register' component={Register}/>
       <AppliedRoute exact path='/login' component={Login} props={childProps}/>
       <AppliedRoute exact path='/profile' component={Profile} props={childProps}/>

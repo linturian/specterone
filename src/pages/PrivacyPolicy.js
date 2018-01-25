@@ -5,7 +5,7 @@ const Panel = Collapse.Panel;
 
 function PrivacyPolicy(props) {
     return (
-        <section className="white-section" id="privacyPolicy">
+        <section className="white-section policy-details">
             <Row>
                 <Col xs={24} className="topic" >
                     <h2>SPECTER ONE PRIVACY POLICY</h2>
@@ -50,8 +50,10 @@ function PrivacyPolicy(props) {
                             <li>(a) responding to your queries and requests;</li>
                             <li>(b) managing the administrative and business operations of Specter One and complying with internal policies and procedures;</li>
                             <li>(c) facilitating business asset transactions (which may extend to any mergers, acquisitions or asset sales) involving any of the Companies;</li>
-                            <li>(d) matching any Personal Data held which relates to you for any of the purposes listed herein (e) resolving complaints and handling requests and enquiries;</li>
-                            <li>(f) preventing, detecting and investigating crime and analyzing and managing commercial risks (g) providing media announcements and responses;</li>
+                            <li>(d) matching any Personal Data held which relates to you for any of the purposes listed herein;</li>
+                            <li>(e) resolving complaints and handling requests and enquiries;</li>
+                            <li>(f) preventing, detecting and investigating crime and analyzing and managing commercial risks;</li>
+                            <li>(g) providing media announcements and responses;</li>
                             <li>(h) monitoring or recording phone calls and customer-facing interactions for quality assurance, employee training and performance evaluation and identity verification purposes;</li>
                             <li>(i) organising promotional events;</li>
                             <li>(j) legal purposes (including but not limited to obtaining legal advice and dispute resolution);</li>
