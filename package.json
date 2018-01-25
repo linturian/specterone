@@ -22,6 +22,7 @@
     "react-scripts": "1.0.7"
   },
   "scripts": {
+    "css": "lessc --clean-css src/style.less src/style.min.css",
     "start": "lessc --clean-css src/style.less src/style.min.css && react-scripts start",
     "build": "lessc --clean-css src/style.less src/style.min.css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
